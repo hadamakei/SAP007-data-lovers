@@ -3,12 +3,10 @@ import { filterCharacter, pegaTitulo } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 //funcao manda pra filtro de personagens os dados; recebe array com os personagens
-
 const filmes = pegaTitulo(data);
 console.log(filmes);
 
 //salva o array de personagens q veio do filtro                                                        
-
 const filtroFilme = document.getElementById("selecioneFilme");
 const filtroGenero = document.getElementById("selecioneGenero");
 
@@ -31,11 +29,6 @@ function getCharacter(tituloEscolhido, generoEscolhido){
 // let opcao;
 
 filmes.forEach(function(titulo){
-    // opcao = document.createElement("option");
-    // opcao.setAttribute("id", titulo);
-    // opcao.setAttribute("value", titulo);
-    // opcao.textContent = titulo;
-    // filtroFilme.appendChild(opcao);
     filtroFilme.insertAdjacentHTML('beforeend',
     `<option value= "${titulo}">${titulo}</option>` )
 });
@@ -45,8 +38,6 @@ function exibePersonagens(tituloEscolhido, generoEscolhido){
     let cardPeolple = document.getElementById("cardPersonagens");
     let liPersonagens;  
     let characters = getCharacter(tituloEscolhido, generoEscolhido);
-   // let divImagem;
-   // let divInfo;
 
     console.log(characters);
     cardPeolple.innerHTML= " ";
@@ -82,12 +73,5 @@ function exibePersonagens(tituloEscolhido, generoEscolhido){
     cardPeolple.appendChild(liPersonagens);
     });
 }
-
-
-    // let opcaoRecarregar = document.getElementsByClassName("opcaoSelecionar");
-    // opcaoRecarregar.addEventListener("click", function(){
-    //     location.reload()
-    // });
-
 
 

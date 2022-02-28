@@ -106,17 +106,13 @@ export const calculo = (getMovies) => {
                 maisJovem = (maisJovem > personagem.age) || maisJovem == 0 ? personagem.age : maisJovem
                 maisVelho = maisVelho < personagem.age ? personagem.age : maisVelho
             }
-            
         })
     });
-
     retornoCalculos["mediaNotas"] = (somaNota/getMovies.length).toFixed(2)
     retornoCalculos["mediaIdade"] = (somaIdade/contadorPersonagens).toFixed(0)
     retornoCalculos["maisJovem"] = maisJovem
     retornoCalculos["maisVelho"] = maisVelho
-    
     // mediaNotas = notas / 2 
     return retornoCalculos
-    
 }
 //console.log(calculo())
