@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-import { filterData, pegaDiretores, pegaProdutores } from './data.js';
-=======
 import { filterData, pegaDiretores, pegaProdutores, calculo, ordenaDados } from './data.js';
->>>>>>> Stashed changes
 import data from './data/ghibli/ghibli.js';
 
 exibeFilmes([]);
@@ -49,18 +45,11 @@ produtores.forEach(function(produtor){
 
 function exibeFilmes ( valorEscolhido, ordemEscolhida){
     let listaFilmes = document.getElementById("listaFilmes");  
-<<<<<<< Updated upstream
-    let items = getMovies(valorEscolhido);                                                                
-    let liCard;   
-
-
-=======
     let items = getMovies(valorEscolhido, ordemEscolhida);     
     console.log(items)                                                           
     let liCard;
     exibeContas(items);
     
->>>>>>> Stashed changes
     listaFilmes.innerHTML = "";
     //percorre cada item do array ; 
     items.forEach(function(movie){    
