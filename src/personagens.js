@@ -1,4 +1,4 @@
-import { filterCharacter, pegaTitulo } from './data.js';
+import { filterCharacter, pegaTitulo, ordenaDados } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -9,42 +9,45 @@ console.log(filmes);
 //salva o array de personagens q veio do filtro                                                        
 const filtroFilme = document.getElementById("selecioneFilme");
 const filtroGenero = document.getElementById("selecioneGenero");
+const filtroOrdem = document.getElementById("selecionaOrdem")
 
 let filtroGeral = function(){
     let tituloEscolhido = filtroFilme.value;
     let generoEscolhido = filtroGenero.value;
+    let ordemEscolhida = filtroOrdem.value
     console.log(tituloEscolhido)
-    exibePersonagens(tituloEscolhido, generoEscolhido);
+    exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida);
 }
 
 filtroGeral()
 
 filtroFilme.addEventListener("change", filtroGeral)
 filtroGenero.addEventListener("change", filtroGeral)
+filtroOrdem.addEventListener("change", filtroGeral)
 
-function getCharacter(tituloEscolhido, generoEscolhido){                                                  
-    return filterCharacter(data, tituloEscolhido, generoEscolhido);
+function getCharacter(tituloEscolhido, generoEscolhido, ordemEscolhida){                                                  
+    let personagensFiltrados = filterCharacter(data, tituloEscolhido, generoEscolhido);
+    return ordenaPersonagem(personagensFiltrados,ordemEscolhida)
 }
-
-// let opcao;
 
 filmes.forEach(function(titulo){
     filtroFilme.insertAdjacentHTML('beforeend',
     `<option value= "${titulo}">${titulo}</option>` )
 });
 
-function exibePersonagens(tituloEscolhido, generoEscolhido){
+function exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida){
     //pega e salva o elemento com o id da lista na variavel cardPeople
     let cardPeolple = document.getElementById("cardPersonagens");
     let liPersonagens;  
-    let characters = getCharacter(tituloEscolhido, generoEscolhido);
+    let characters = getCharacter(tituloEscolhido, generoEscolhido, ordemEscolhida);
+   // let divImagem;
+   // let divInfo;
 
     console.log(characters);
     cardPeolple.innerHTML= " ";
-    //percorre cada personagem do array 
     if (characters.length == 0){
         cardPeolple.innerHTML = "Sem resultados. Tente outros filtros."
-    }
+    } //percorre cada personagem do array 
     characters.forEach(function(character){  
     liPersonagens = document.createElement("div"); 
     liPersonagens.insertAdjacentHTML("beforeend",
@@ -72,6 +75,16 @@ function exibePersonagens(tituloEscolhido, generoEscolhido){
         )
     cardPeolple.appendChild(liPersonagens);
     });
+}
+
+function ordenaPersonagem (characters, ordemEscolhida){
+    if(ordemEscolhida == "ordemAlfabetica"){ 
+        ordenaDados(characters, "nome", "asc");
+    }
+    if(ordemEscolhida == "ordemReversaAlfabetica") {
+        ordenaDados(characters, "nome", "desc");
+    }
+    return characters
 }
 
 

@@ -1,18 +1,32 @@
+<<<<<<< Updated upstream
 import { filterData, pegaDiretores, pegaProdutores } from './data.js';
+=======
+import { filterData, pegaDiretores, pegaProdutores, calculo, ordenaDados } from './data.js';
+>>>>>>> Stashed changes
 import data from './data/ghibli/ghibli.js';
 
 exibeFilmes([]);
 const filtro = document.getElementById("selecao");
-filtro.addEventListener("change", function()  {
+const ordemFiltro = document.getElementById("selecionaOrdem");  
+let filtrarEOrdenar = function() {
     let valorEscolhido = filtro.value;
-    valorEscolhido = valorEscolhido.split("."); //["diretor" "nome"]
+    let ordemEscolhida = ordemFiltro.value
+    console.log(ordemEscolhida)
+    if (valorEscolhido == ""){
+        valorEscolhido = []
+    } else {
+        valorEscolhido = valorEscolhido.split("."); //["diretor" "nome"]
+    }
     console.log(valorEscolhido)
-    exibeFilmes(valorEscolhido);
-})
+    exibeFilmes(valorEscolhido, ordemEscolhida);
+}
+filtro.addEventListener("change", filtrarEOrdenar)
+ordemFiltro.addEventListener("change", filtrarEOrdenar)
 
 //funcao que manda pro filtro de filme os dados e recebe o array com todos os filmes
-function getMovies (valorEscolhido) {      
-    return filterData(data, valorEscolhido );
+function getMovies (valorEscolhido, ordemEscolhida) {      
+    let filmes = filterData(data, valorEscolhido );
+    return ordenaItem(filmes, ordemEscolhida)
 }
 
 let diretores = pegaDiretores(data);   
@@ -20,8 +34,7 @@ console.log(diretores)
 let produtores = pegaProdutores(data);
 console.log(produtores)                                                                            
 const filtroDiretor = document.getElementById("diretorOptgroup");
-const filtroProdutor = document.getElementById("produtorOptgroup")
-//let option;
+const filtroProdutor = document.getElementById("produtorOptgroup");
 
 //cria filtro de diretores no html
 diretores.forEach(function(diretor){
@@ -34,12 +47,20 @@ produtores.forEach(function(produtor){
     `<option value= "produtor.${produtor}"> ${produtor}</option>`)
 });
 
-function exibeFilmes ( valorEscolhido){
+function exibeFilmes ( valorEscolhido, ordemEscolhida){
     let listaFilmes = document.getElementById("listaFilmes");  
+<<<<<<< Updated upstream
     let items = getMovies(valorEscolhido);                                                                
     let liCard;   
 
 
+=======
+    let items = getMovies(valorEscolhido, ordemEscolhida);     
+    console.log(items)                                                           
+    let liCard;
+    exibeContas(items);
+    
+>>>>>>> Stashed changes
     listaFilmes.innerHTML = "";
     //percorre cada item do array ; 
     items.forEach(function(movie){    
@@ -71,3 +92,42 @@ function exibeFilmes ( valorEscolhido){
     
 }
 
+function ordenaItem(items, ordemEscolhida){
+
+    if (ordemEscolhida == "ordemAlfabetica"){
+        return ordenaDados(items, "titulo", "asc" )
+    }
+    if (ordemEscolhida == "lancamentosRecentes"){
+        return ordenaDados(items, "dataLancamento", "desc" )
+    }
+    if (ordemEscolhida == "lancamentosAntigos"){
+        return ordenaDados(items, "dataLancamento", "asc" )
+    }
+    return items
+ console.log("entrou")
+
+}
+
+// function grafico (){
+//     return calculo(data);
+// }
+
+// grafico();
+
+// function exibeGrafico(){
+//     let resultado = document.getElementById("resultadoCalculo");
+//     let valor= grafico()
+//     resultado.innerHTML= `${valor}`
+// }
+
+// exibeGrafico();
+
+
+function exibeContas(items){
+    let resultado = document.getElementById("resultadoCalculo");
+    let valor= calculo(items)
+    console.log(valor)
+    resultado.innerHTML= `<p> A média da avaliação dos filmes é ${valor["mediaNotas"]}
+    .</p><p> A média de idade dos personagens é ${valor["mediaIdade"]} anos.</p><p> O personagem mais novo tem ${valor["maisJovem"]} anos.</p><p> E o personagem mais velho tem ${valor["maisVelho"]} anos.</p>` 
+    return resultado
+}
