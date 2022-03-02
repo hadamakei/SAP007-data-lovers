@@ -11,6 +11,15 @@
   padding-top: 1%;
   margin-left: 2%;
 }
+
+.resultadoCalculo{
+  font-size: 1.1rem;
+  color: rgb(88, 92, 87);
+  text-align: center;
+  padding-top: 1%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
  
  .caixa-galeria-filmes {
   margin: 0 auto;
