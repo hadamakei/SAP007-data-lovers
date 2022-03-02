@@ -79,15 +79,142 @@ export const filterCharacter = (data, tituloEscolhido, generoEscolhido) => {
     return personagens
 }
 
-// export const ordenar = (data, condicao) => {
-//     let ordenaTituloAZ = [data["title"]]
-//    let teste = ordenaTituloAZ.sort((a,b) =>{
-//        return a.title.localeCompare(b.title);
-//    });
-// console.log(teste);
-// export function ordenar = (data) => {
-//  const ordenarAnoAsc = (a,b)
+// export const ordenar = (items, ordenarPor) => {
+//     items.sort(function (a,b)  {
 
+//         switch(ordenarPor) {
+//             case 'ordemAlfabetica': 
+//                 if (a.title > b.title){
+//                     return 1;
+//                 }
+//                 if (a.title < b.title){
+//                     return -1;
+//                 }
+//                 return 0;
+            
+//             case 'lancamentosRecentes': 
+//                 if (a.title > b.title){
+//                     return 1;
+//                 }
+//                 if (a.title < b.title){
+//                     return -1;
+//                 }
+//                 return 0;
+//         }
+
+
+        
+//     });
+
+
+//     if(opcaoValor ==  "ordemAlfabetica"){
+//         items.sort(function (a,b)  {
+//             if (a.title > b.title){
+//                 return 1;
+//             }
+//             if (a.title < b.title){
+//                 return -1;
+//             }
+//             return 0;
+//         });
+//     }
+//     if (opcaoValor == "lancamentosRecentes"){
+//         if (a.release_date > b.release_date){
+//             return 1;
+//         }
+//         if (a.release_date < b.release_date){
+//             return -1;
+//         }
+//         return 0;
+//     } else{
+//         if (a.release_date < b.release_date){
+//             return 1;
+//         }
+//         if (a.release_date > b.release_date){
+//             return -1;
+//         }
+//         return 0;
+//     };
+   
+// };
+
+export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
+    if(ordenaPor == '') return items
+    items.sort(function (a,b)  {
+        let valorA
+        let valorB
+        switch(ordenaPor) {
+            case 'dataLancamento': 
+                valorA = parseInt(a.release_date)
+                valorB = parseInt(b.release_date)
+                break
+
+            case 'titulo': 
+                valorA = a.title
+                valorB = b.title
+                break
+
+            case "nome":
+                if(direcaoOrdem == 'asc') {
+                    return a.name.localeCompare(b.name);
+                } else {
+                    return b.name.localeCompare(a.name);
+                }
+            break
+        }
+        //Faz a ordenação
+        if(direcaoOrdem == 'asc') {
+            if (valorA > valorB){
+                return 1;
+            }
+            if (valorA < valorB){
+                return -1;
+            }
+        } else {
+            if (valorA < valorB){
+                return 1;
+            }
+            if (valorA > valorB){
+                return -1;
+            }
+        }
+        return 0;
+        
+    });
+
+    return items
+
+    console.log("entrou2")
+    // if(opcaoValor ==  "ordemAlfabetica"){
+    //     items.sort(function (a,b)  {
+    //         if (a.title > b.title){
+    //             return 1;
+    //         }
+    //         if (a.title < b.title){
+    //             return -1;
+    //         }
+    //         return 0;
+    //     });
+    // }
+    // if (opcaoValor == "lancamentosRecentes"){
+    //     if (a.release_date > b.release_date){
+    //         return 1;
+    //     }
+    //     if (a.release_date < b.release_date){
+    //         return -1;
+    //     }
+    //     return 0;
+    // } else{
+    //     if (a.release_date < b.release_date){
+    //         return 1;
+    //     }
+    //     if (a.release_date > b.release_date){
+    //         return -1;
+    //     }
+    //     return 0;
+    // };
+   
+};
 
 export const calculo = (getMovies) => {
     let somaNota = 0
@@ -112,7 +239,7 @@ export const calculo = (getMovies) => {
     retornoCalculos["mediaIdade"] = (somaIdade/contadorPersonagens).toFixed(0)
     retornoCalculos["maisJovem"] = maisJovem
     retornoCalculos["maisVelho"] = maisVelho
-    // mediaNotas = notas / 2 
+    
     return retornoCalculos
 }
 //console.log(calculo())
