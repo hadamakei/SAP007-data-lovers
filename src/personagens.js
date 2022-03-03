@@ -1,9 +1,9 @@
-import { filterCharacter, pegaTitulo, ordenaDados } from './data.js';
+import { filterCharacter, ordenaDados, pegaValorDoFiltro } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
 //funcao manda pra filtro de personagens os dados; recebe array com os personagens
-const filmes = pegaTitulo(data);
+const filmes = pegaValorDoFiltro(data["films"], "title");
 console.log(filmes);
 
 //salva o array de personagens q veio do filtro                                                        

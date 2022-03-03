@@ -12,60 +12,63 @@ export const filtraDados = (dados, campoDesejado, valorEscolhido) => {
     return dados.filter(elemento => {
         return elemento[campoDesejado] == valorEscolhido || valorEscolhido.length == 0
     });
+    
+    
 }
 
-// export const pegaValorDoArray = function (data, campoDesejado) {
-//     let ArrayRetorno = []
-//     data.map(function (elemento) {
-//         if (ArrayRetorno.indexOf(elemento[campoDesejado]) == -1) {
-//             ArrayRetorno.push(
-//                 elemento[campoDesejado]
-//             );
-//         }
-//     })
-// }
+export const pegaValorDoFiltro = function (data, campoDesejado) {
+    let ArrayRetorno = []
+    data.map(function (elemento) {
+        if (ArrayRetorno.indexOf(elemento[campoDesejado]) == -1) {
+            ArrayRetorno.push(
+                elemento[campoDesejado]
+            );
+        }
+    })
+    return ArrayRetorno
+}
 
 //filtra nome dos filmes pagina personagens
-export const pegaTitulo = (data) => {
-    // let dados = data["films"]
-    // let titulo = dados.map(nome =>nome["title"]) 
-    // return titulo
+// export const pegaTitulo = (data) => {
+//     // let dados = data["films"]
+//     // let titulo = dados.map(nome =>nome["title"]) 
+//     // return titulo
 
-    let titulo = [];
-    data["films"].forEach((nome) => {
-        titulo.push(
-            nome["title"])
-    });
-    return titulo;
-};
+//     let titulo = [];
+//     data["films"].forEach((nome) => {
+//         titulo.push(
+//             nome["title"])
+//     });
+//     return titulo;
+// };
 
 //filtra diretores pagina filme
-export const pegaDiretores = (data) => {
-    let diretores = [];
-    data["films"].forEach((filme) => {
+// export const pegaDiretores = (data) => {
+//     let diretores = [];
+//     data["films"].forEach((filme) => {
 
-        if (diretores.indexOf(filme["director"]) == -1) {
-            diretores.push(
-                filme["director"]
-            );
-        }
-    });
-    return diretores;
-}
+//         if (diretores.indexOf(filme["director"]) == -1) {
+//             diretores.push(
+//                 filme["director"]
+//             );
+//         }
+//     });
+//     return diretores;
+// }
 
 //Filtra produtores pagina filme
-export const pegaProdutores = (data) => {
-    let produtores = [];
-    data["films"].forEach((produtor) => {
+// export const pegaProdutores = (data) => {
+//     let produtores = [];
+//     data["films"].forEach((produtor) => {
 
-        if (produtores.indexOf(produtor["producer"]) == -1) {
-            produtores.push(
-                produtor["producer"]
-            );
-        }
-    });
-    return produtores;
-}
+//         if (produtores.indexOf(produtor["producer"]) == -1) {
+//             produtores.push(
+//                 produtor["producer"]
+//             );
+//         }
+//     });
+//     return produtores;
+// }
 
 //funcao que filtra e retorna dados de personagens
 export const filterCharacter = (data, tituloEscolhido, generoEscolhido) => {
