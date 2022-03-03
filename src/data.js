@@ -1,12 +1,29 @@
-export const filterData = (data, valorEscolhido) => { //Recebe array de dados e valor escolhido de filtros
-    let filmes = data["films"].filter(filme => { //Filtra o novo array 
-        let verificaFiltroDiretor = (valorEscolhido.length == 0 || (valorEscolhido[0] == "diretor" && valorEscolhido[1] == filme["director"]))
-        let verificaFiltroProdutor = (valorEscolhido.length == 0 || (valorEscolhido[0] == "produtor" && valorEscolhido[1] == filme["producer"]))
-        return verificaFiltroDiretor || verificaFiltroProdutor; //Caso seja true, mantém o elemento, caso false, o retira do novo array
+// export const filterData = (data, valorEscolhido) => { //Recebe array de dados e valor escolhido de filtros
+//     let filmes = data["films"].filter(filme => { //Filtra o novo array 
+//         let verificaFiltroDiretor = (valorEscolhido.length == 0 || (valorEscolhido[0] == "diretor" && valorEscolhido[1] == filme["director"]))
+//         let verificaFiltroProdutor = (valorEscolhido.length == 0 || (valorEscolhido[0] == "produtor" && valorEscolhido[1] == filme["producer"]))
+//         return verificaFiltroDiretor || verificaFiltroProdutor; //Caso seja true, mantém o elemento, caso false, o retira do novo array
+//     });
+//     console.log(filmes)
+//     return filmes
+// }
+
+export const filtraDados = (dados, campoDesejado, valorEscolhido) => {
+    return dados.filter(elemento => {
+        return elemento[campoDesejado] == valorEscolhido || valorEscolhido.length == 0
     });
-    console.log(filmes)
-    return filmes
 }
+
+// export const pegaValorDoArray = function (data, campoDesejado) {
+//     let ArrayRetorno = []
+//     data.map(function (elemento) {
+//         if (ArrayRetorno.indexOf(elemento[campoDesejado]) == -1) {
+//             ArrayRetorno.push(
+//                 elemento[campoDesejado]
+//             );
+//         }
+//     })
+// }
 
 //filtra nome dos filmes pagina personagens
 export const pegaTitulo = (data) => {

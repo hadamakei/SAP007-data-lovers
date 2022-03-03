@@ -1,4 +1,4 @@
-import { filterData, pegaDiretores, pegaProdutores, calculo, ordenaDados } from './data.js';
+import {  pegaDiretores, pegaProdutores, calculo, ordenaDados, filtraDados } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 exibeFilmes([]);
@@ -11,7 +11,7 @@ let filtrarEOrdenar = function() {
     if (valorEscolhido == ""){
         valorEscolhido = []
     } else {
-        valorEscolhido = valorEscolhido.split("."); //["diretor" "nome"]
+        valorEscolhido = valorEscolhido.split("."); //["diretor" "nome"] produtor.Nome
     }
     console.log(valorEscolhido)
     exibeFilmes(valorEscolhido, ordemEscolhida);
@@ -21,7 +21,7 @@ ordemFiltro.addEventListener("change", filtrarEOrdenar)
 
 //funcao que manda pro filtro de filme os dados e recebe o array com todos os filmes
 function getMovies (valorEscolhido, ordemEscolhida) {      
-    let filmes = filterData(data, valorEscolhido );
+    let filmes = filtraDados(data["films"], valorEscolhido[0], valorEscolhido[1] );
     return ordenaItem(filmes, ordemEscolhida)
 }
 
@@ -34,13 +34,13 @@ const filtroProdutor = document.getElementById("produtorOptgroup");
 
 //cria filtro de diretores no html
 diretores.forEach(function(diretor){
-    filtroDiretor.innerHTML += `<option value= "diretor.${diretor}">${diretor}</option>`
+    filtroDiretor.innerHTML += `<option value= "director.${diretor}">${diretor}</option>`
 });
 
 //cria filtro de produtores no html
 produtores.forEach(function(produtor){
     filtroProdutor.insertAdjacentHTML('beforeend',
-    `<option value= "produtor.${produtor}"> ${produtor}</option>`)
+    `<option value= "producer.${produtor}"> ${produtor}</option>`)
 });
 
 function exibeFilmes ( valorEscolhido, ordemEscolhida){
