@@ -1,26 +1,33 @@
 @import url(padrao.css);
 
- .caixa-galeria-personagens{
+.div-galeria-personagens{
     width:78%;
-    margin: 0 auto;
+    margin: 4% auto;
     display:flex;
     flex-direction:row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 0;
+    box-sizing: border-box;
+    padding: 5%;
   }
 
-  .card {
+.card{
     background-color:transparent;
     width: 170px;
     height: 300px;
     border: 1px solid #f1f1f1;
     perspective: 1000px; 
     display:flex;
-    margin:2%;
-  }
+    margin:6%;
+    align-items: center;
+    justify-content: space-between;
+  
+ }
 
-  .card-interno {
+.card-interno {
     position: relative;
     width: 100%;
     height: 100%;
@@ -36,42 +43,49 @@
     object-fit:cover;
   } 
 
-  .card-nome-frente{
+.card-nome-frente{
     width:170px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding:0 10px;
-    color: #736356;
-    text-decoration:underline
+    color: #70458C;
+    font-size: 1.1rem;
+    text-decoration:underline;
   }
   
   
-  .card:hover .card-interno {
+.card:hover .card-interno {
     transform: rotateY(180deg);
   }
   
-  .card-frente, .card-verso {
+.card-frente, .card-verso {
     position: absolute;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    box-shadow: 0px 0px 10px 2px rgba(68, 69, 150, 0.7); 
+    box-shadow: 0px 0px 10px 2px #251E40; 
     background-color: rgb(255, 255, 255);
   }
   
-  .card-verso {
+.card-verso {
     transform: rotateY(180deg);
     width: 170px;
     height: 280px;
     padding: 0 10px;
   }
 
-  .card-texto-verso{
-    color: #736356;
-    font-size: 16px;
-    margin-top:30px;
+.card-nome-verso{
+  font-size: 1.2rem;
+  margin-top:20px;
+  color: #70458C;
+  font-weight: bold;
+}
+.card-texto-verso{
+    color: #666;
+    font-size: 1.1rem;
+    margin-top:20px;
     text-align: center;
   }
