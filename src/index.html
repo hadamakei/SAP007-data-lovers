@@ -9,7 +9,8 @@
 
 <body>
   <header class="caixa-cabecalho">
-    <div><img class="img-logo" src="./imagens/logo.png" alt="imagem studio ghibli"></div>
+    <div><img class="img-logo" src="./imagens/logo.png" alt="imagem ref. ao logo da página studio ghibli"></div>
+    
     <nav class="menu-nav">
       <ul>
         <li><a href="personagens.html">Personagens</a></li>
@@ -37,7 +38,7 @@
         <form>
             <div class="div-filtra-ordena">
                 <select class="label-filtra-ordena" id="selecao">
-                    <option selected disabled>Filtrar por</option>
+                    <option selected disabled value="">Filtrar</option>
                     <optgroup label="Diretor:" id="diretorOptgroup">
                     </optgroup>
                     <optgroup label="Produtor:" id="produtorOptgroup">
@@ -45,7 +46,7 @@
                 </select>
 
                 <select class="label-filtra-ordena" id="selecionaOrdem">
-                    <option selected disabled>Ordenar por</option>
+                    <option selected disabled>Ordenar</option>
                     <option class="opcaoOrdem" value="ordemAlfabetica" id="">A &#8594 Z</option>
                     <option class="opcaoOrdem" value="lancamentosRecentes" id="">Lançamentos mais recentes</option>
                     <option class="opcaoOrdem" value="lancamentosAntigos" id="">Lançamentos mais antigos</option>
@@ -53,8 +54,10 @@
             </div>
         </form>
     </section>
-        <p class="resultadoCalculo" id="resultadoCalculo"></p>
-            <article  id="listaFilmes" class="caixa-galeria-filmes">
+
+        <!-- <p class="resultadoCalculo" id="resultadoCalculo"></p> -->
+
+            <article  id="listaFilmes" class="div-galeria-filmes">
             </article>
 </main>
 

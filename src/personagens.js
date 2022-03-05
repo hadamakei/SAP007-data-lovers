@@ -1,9 +1,8 @@
-import { filterCharacter, pegaTitulo, ordenaDados } from './data.js';
-
+import { filtraPersonagens, ordenaDados, pegaValorDosFiltros } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 //funcao manda pra filtro de personagens os dados; recebe array com os personagens
-const filmes = pegaTitulo(data);
+const filmes = pegaValorDosFiltros(data["films"], "title");
 console.log(filmes);
 
 //salva o array de personagens q veio do filtro                                                        
@@ -25,8 +24,8 @@ filtroFilme.addEventListener("change", filtroGeral)
 filtroGenero.addEventListener("change", filtroGeral)
 filtroOrdem.addEventListener("change", filtroGeral)
 
-function getCharacter(tituloEscolhido, generoEscolhido, ordemEscolhida){                                                  
-    let personagensFiltrados = filterCharacter(data, tituloEscolhido, generoEscolhido);
+function getPersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida){                                                  
+    let personagensFiltrados = filtraPersonagens(data, tituloEscolhido, generoEscolhido);
     return ordenaPersonagem(personagensFiltrados,ordemEscolhida)
 }
 
@@ -39,16 +38,16 @@ function exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida){
     //pega e salva o elemento com o id da lista na variavel cardPeople
     let cardPeolple = document.getElementById("cardPersonagens");
     let liPersonagens;  
-    let characters = getCharacter(tituloEscolhido, generoEscolhido, ordemEscolhida);
+    let Personagens = getPersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida);
    // let divImagem;
    // let divInfo;
 
-    console.log(characters);
+    console.log(Personagens);
     cardPeolple.innerHTML= " ";
-    if (characters.length == 0){
+    if (Personagens.length == 0){
         cardPeolple.innerHTML = "Sem resultados. Tente outros filtros."
     } //percorre cada personagem do array 
-    characters.forEach(function(character){  
+    Personagens.forEach(function(Personagens){  
     liPersonagens = document.createElement("div"); 
     liPersonagens.insertAdjacentHTML("beforeend",
         `
@@ -56,18 +55,18 @@ function exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida){
          <div class="card-interno">
              <div class="card-frente">
                  <figure>
-                 <img class="card-img" src=${character.img} alt="imagem dos personagens: ${character.name} style=" height = "240px", width= "250px
+                 <img class="card-img" src=${Personagens.img} alt="imagem ref. ao personagem: ${Personagens.name} style=" height = "240px", width= "250px
                  100%"" >
                  </figure>  
-                 <div class="card-nome-frente"><p>${character.name}</p></div>
+                 <div class="card-nome-frente"><p>${Personagens.name}</p></div>
              </div>
                
              <div class= "card-verso">
-              <p class="card-texto-verso">Nome: ${character.name}</p>
-              <p class="card-texto-verso">Idade: ${character.age}</p>
-              <p class="card-texto-verso">Gênero :${character.gender}</p>
-              <p class="card-texto-verso">Espécie: ${character.specie}</p>
-              <p class="card-texto-verso">Filme: ${character.title}</p>
+              <p class="card-nome-verso">${Personagens.name}</p>
+              <p class="card-texto-verso">Idade: ${Personagens.age}</p>
+              <p class="card-texto-verso">Gênero: ${Personagens.gender}</p>
+              <p class="card-texto-verso">Espécie: ${Personagens.specie}</p>
+              <p class="card-texto-verso">Filme: ${Personagens.title}</p>
              </div>
             </div>
         </div>
@@ -77,14 +76,14 @@ function exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida){
     });
 }
 
-function ordenaPersonagem (characters, ordemEscolhida){
+function ordenaPersonagem (personagens, ordemEscolhida){
     if(ordemEscolhida == "ordemAlfabetica"){ 
-        ordenaDados(characters, "nome", "asc");
+        ordenaDados(personagens, "nome", "asc");
     }
     if(ordemEscolhida == "ordemReversaAlfabetica") {
-        ordenaDados(characters, "nome", "desc");
+        ordenaDados(personagens, "nome", "desc");
     }
-    return characters
+    return personagens
 }
 
 
