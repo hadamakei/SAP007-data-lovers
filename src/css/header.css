@@ -1,5 +1,8 @@
 body{
   font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+
   
 }
 
@@ -9,11 +12,19 @@ body{
 }
 
 .caixa-cabecalho{
+  height: 40vh;
   width: 100%;
-  height: 80%;
-  background-color: #454259;
+  padding-top:1rem;
+  /* background-image: url(../imagens/cabeçalho.png);
+  background-size: cover;
+  background-position-x:100% ;
+  background-repeat: no-repeat; */
   display: flex;
+  align-items: center;
+  justify-content: space-around;
   flex-direction: row;
+  background-color: #092640;
+  font-size: 100%;
 }
 
 .menu-nav {
@@ -27,12 +38,12 @@ body{
 
 .menu-nav ul li {
   display: inline;
-  padding: 30px;
+  padding: 4.0rem;
 }
 
 .menu-nav a{
   text-decoration: none; 
-  font-size: 22px;
+  font-size: 1.8rem;
   color: #B3C235;
   
 }

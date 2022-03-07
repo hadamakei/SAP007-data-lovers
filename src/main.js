@@ -1,4 +1,4 @@
-import {  pegaValorDoFiltro, calculo, ordenaDados, filtraDados } from './data.js';
+import { filtraDados, pegaValorDoFiltro, ordenaDados, calculo } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 exibeFilmes([]);
@@ -20,9 +20,9 @@ filtro.addEventListener("change", filtrarEOrdenar)
 ordemFiltro.addEventListener("change", filtrarEOrdenar)
 
 //funcao que manda pro filtro de filme os dados e recebe o array com todos os filmes
-function getMovies (valorEscolhido, ordemEscolhida) {      
-    let filmes = filtraDados(data["films"], valorEscolhido[0], valorEscolhido[1] );
-    return ordenaItem(filmes, ordemEscolhida)
+function getMovies(valorEscolhido, ordemEscolhida) {
+  let filmes = filtraDados(data["films"], valorEscolhido[0], valorEscolhido[1]);
+  return ordenaItem(filmes, ordemEscolhida)
 }
 
 let diretores = pegaValorDoFiltro(data["films"], "director");   
@@ -33,13 +33,13 @@ const filtroDiretor = document.getElementById("diretorOptgroup");
 const filtroProdutor = document.getElementById("produtorOptgroup");
 
 //cria filtro de diretores no html
-diretores.forEach(function(diretor){
-    filtroDiretor.innerHTML += `<option value= "director.${diretor}">${diretor}</option>`
+diretores.forEach(function (diretor) {
+  filtroDiretor.innerHTML += `<option value= "director.${diretor}">${diretor}</option>`
 });
 
 //cria filtro de produtores no html
-produtores.forEach(function(produtor){
-    filtroProdutor.insertAdjacentHTML('beforeend',
+produtores.forEach(function (produtor) {
+  filtroProdutor.insertAdjacentHTML('beforeend',
     `<option value= "producer.${produtor}"> ${produtor}</option>`)
 });
 
@@ -58,27 +58,31 @@ function exibeFilmes ( valorEscolhido, ordemEscolhida){
            
         liCard.insertAdjacentHTML("beforeend",
         `
-        <section class="caixa-filmes" id=${movie.id} >  
-        <figure>
-            <img class="filme-img" src=${movie.poster} alt="imagens dos filmes: ${movie.title}">
+            <section class="div-borda" id=${movie.id}>  
+            <figure>
+              <img class="img-do-filme" src=${movie.poster} alt="imagem do poster ref. ao filme ${movie.title}">
          </figure>
-         <div class="filme-informacoes">
-            <p>Título: ${movie.title}</p>
-            <p>Ano de lançamento: ${movie.release_date}</p>
-            <p>Avaliação: ${movie.rt_score}</p>
-            <p>Diretor: ${movie.director}</p>
-            <p>Produtor: ${movie.producer}</p>
+          <div class="div-informacoes-gerais">
+            <div class="div-titulo-e-avaliacao">
+                <div class="titulo-do-filme">
+                   <h3> ${movie.title}</h3>
+                </div>
+                <figure class="div-avaliacao">
+                  <img class="img-da-avaliacao" src="./imagens/avaliacao.png" alt="Imagem de avaliação ref. a nota do filme">
+                  <span class="nota-da-avaliacao">${movie.rt_score}</span>
+               </figure>  
+           </div>   
+             <h3 class="titulo-tag-h3">Sinopse</h3> ${movie.description}
+             <h3 class="titulo-tag-h3">Ficha Técnica</h3>
+             <p><strong>Diretor</strong>: ${movie.director}</p>
+             <p><strong>Produtor</strong>: ${movie.producer}</p>
+             <p><strong>Ano de lançamento</strong>: ${movie.release_date}</p>
          </div>
-         <div class="caixa-sinopse" >
-            <p class="titulo-sinpose">Sinopse:</p> 
-            <p class="texto-sinpose">${movie.description}</p>
-         </div>
-         </section>
+      </section>
          `)
-        liCard.setAttribute("class", "lista-filme")
-       listaFilmes.appendChild(liCard);                                                                                      
-    });
-    
+    liCard.setAttribute("class", "lista-filme")
+    listaFilmes.appendChild(liCard);
+  });
 }
 
 function ordenaItem(items, ordemEscolhida){

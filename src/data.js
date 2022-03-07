@@ -1,13 +1,4 @@
-// export const filterData = (data, valorEscolhido) => { //Recebe array de dados e valor escolhido de filtros
-//     let filmes = data["films"].filter(filme => { //Filtra o novo array 
-//         let verificaFiltroDiretor = (valorEscolhido.length == 0 || (valorEscolhido[0] == "diretor" && valorEscolhido[1] == filme["director"]))
-//         let verificaFiltroProdutor = (valorEscolhido.length == 0 || (valorEscolhido[0] == "produtor" && valorEscolhido[1] == filme["producer"]))
-//         return verificaFiltroDiretor || verificaFiltroProdutor; //Caso seja true, mantém o elemento, caso false, o retira do novo array
-//     });
-//     console.log(filmes)
-//     return filmes
-// }
-
+//funcões que filtra e retorna dados dos filmes
 export const filtraDados = (dados, campoDesejado, valorEscolhido) => {
     return dados.filter(elemento => {
         return elemento[campoDesejado] == valorEscolhido || valorEscolhido.length == 0
@@ -26,47 +17,6 @@ export const pegaValorDoFiltro = function (data, campoDesejado) {
     return ArrayRetorno
 }
 
-//filtra nome dos filmes pagina personagens
-// export const pegaTitulo = (data) => {
-//     // let dados = data["films"]
-//     // let titulo = dados.map(nome =>nome["title"]) 
-//     // return titulo
-
-//     let titulo = [];
-//     data["films"].forEach((nome) => {
-//         titulo.push(
-//             nome["title"])
-//     });
-//     return titulo;
-// };
-
-//filtra diretores pagina filme
-// export const pegaDiretores = (data) => {
-//     let diretores = [];
-//     data["films"].forEach((filme) => {
-
-//         if (diretores.indexOf(filme["director"]) == -1) {
-//             diretores.push(
-//                 filme["director"]
-//             );
-//         }
-//     });
-//     return diretores;
-// }
-
-//Filtra produtores pagina filme
-// export const pegaProdutores = (data) => {
-//     let produtores = [];
-//     data["films"].forEach((produtor) => {
-
-//         if (produtores.indexOf(produtor["producer"]) == -1) {
-//             produtores.push(
-//                 produtor["producer"]
-//             );
-//         }
-//     });
-//     return produtores;
-// }
 
 //funcao que filtra e retorna dados de personagens
 // export const filterCharacter = (data, tituloEscolhido, generoEscolhido) => {
@@ -97,65 +47,7 @@ export const pegaValorDoFiltro = function (data, campoDesejado) {
 //     return personagens
 // }
 
-// export const ordenar = (items, ordenarPor) => {
-//     items.sort(function (a,b)  {
-
-//         switch(ordenarPor) {
-//             case 'ordemAlfabetica': 
-//                 if (a.title > b.title){
-//                     return 1;
-//                 }
-//                 if (a.title < b.title){
-//                     return -1;
-//                 }
-//                 return 0;
-            
-//             case 'lancamentosRecentes': 
-//                 if (a.title > b.title){
-//                     return 1;
-//                 }
-//                 if (a.title < b.title){
-//                     return -1;
-//                 }
-//                 return 0;
-//         }
-
-
-        
-//     });
-
-
-//     if(opcaoValor ==  "ordemAlfabetica"){
-//         items.sort(function (a,b)  {
-//             if (a.title > b.title){
-//                 return 1;
-//             }
-//             if (a.title < b.title){
-//                 return -1;
-//             }
-//             return 0;
-//         });
-//     }
-//     if (opcaoValor == "lancamentosRecentes"){
-//         if (a.release_date > b.release_date){
-//             return 1;
-//         }
-//         if (a.release_date < b.release_date){
-//             return -1;
-//         }
-//         return 0;
-//     } else{
-//         if (a.release_date < b.release_date){
-//             return 1;
-//         }
-//         if (a.release_date > b.release_date){
-//             return -1;
-//         }
-//         return 0;
-//     };
-   
-// };
-
+//funcao que ordena dados dos filmes e personagens
 export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
     if(ordenaPor == '') return items
     let valorA, valorB
