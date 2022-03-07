@@ -1,10 +1,10 @@
-import { filterCharacter, ordenaDados, pegaValorDoFiltro } from './data.js';
+import { filtraDados, ordenaDados, pegaValorDoFiltro } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
 //funcao manda pra filtro de personagens os dados; recebe array com os personagens
 const filmes = pegaValorDoFiltro(data["films"], "title");
-console.log(filmes);
+// console.log(filmes);
 
 //salva o array de personagens q veio do filtro                                                        
 const filtroFilme = document.getElementById("selecioneFilme");
@@ -15,7 +15,7 @@ let filtroGeral = function(){
     let tituloEscolhido = filtroFilme.value;
     let generoEscolhido = filtroGenero.value;
     let ordemEscolhida = filtroOrdem.value
-    console.log(tituloEscolhido)
+    // console.log(tituloEscolhido)
     exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida);
 }
 
@@ -25,9 +25,24 @@ filtroFilme.addEventListener("change", filtroGeral)
 filtroGenero.addEventListener("change", filtroGeral)
 filtroOrdem.addEventListener("change", filtroGeral)
 
-function getCharacter(tituloEscolhido, generoEscolhido, ordemEscolhida){                                                  
-    let personagensFiltrados = filterCharacter(data, tituloEscolhido, generoEscolhido);
-    return ordenaPersonagem(personagensFiltrados,ordemEscolhida)
+function getCharacter(tituloEscolhido, generoEscolhido, ordemEscolhida){
+    let personagens = []
+
+    let filmesFiltrados = filtraDados(data["films"], 'title', tituloEscolhido);
+
+    filmesFiltrados.map(function(film) {
+        film.people.map(function (person){
+            personagens.push(
+                {
+                    ...person,
+                    'title' : film.title
+                }
+            )
+        })
+    })
+    
+    personagens = filtraDados(personagens, 'gender', generoEscolhido);
+    return ordenaPersonagem(personagens,ordemEscolhida)
 }
 
 filmes.forEach(function(titulo){
@@ -43,7 +58,7 @@ function exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida){
    // let divImagem;
    // let divInfo;
 
-    console.log(characters);
+    // console.log(characters);
     cardPeolple.innerHTML= " ";
     if (characters.length == 0){
         cardPeolple.innerHTML = "Sem resultados. Tente outros filtros."
@@ -79,10 +94,11 @@ function exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida){
 
 function ordenaPersonagem (characters, ordemEscolhida){
     if(ordemEscolhida == "ordemAlfabetica"){ 
-        ordenaDados(characters, "nome", "asc");
+        
+        ordenaDados(characters, "name", "asc",);
     }
     if(ordemEscolhida == "ordemReversaAlfabetica") {
-        ordenaDados(characters, "nome", "desc");
+        ordenaDados(characters, "name", "desc");
     }
     return characters
 }

@@ -7,13 +7,13 @@ const ordemFiltro = document.getElementById("selecionaOrdem");
 let filtrarEOrdenar = function() {
     let valorEscolhido = filtro.value;
     let ordemEscolhida = ordemFiltro.value
-    console.log(ordemEscolhida)
+    // console.log(ordemEscolhida)
     if (valorEscolhido == ""){
         valorEscolhido = []
     } else {
         valorEscolhido = valorEscolhido.split("."); //["diretor" "nome"] produtor.Nome
     }
-    console.log(valorEscolhido)
+    // console.log(valorEscolhido)
     exibeFilmes(valorEscolhido, ordemEscolhida);
 }
 filtro.addEventListener("change", filtrarEOrdenar)
@@ -26,9 +26,9 @@ function getMovies (valorEscolhido, ordemEscolhida) {
 }
 
 let diretores = pegaValorDoFiltro(data["films"], "director");   
-console.log(diretores)
+// console.log(diretores)
 let produtores = pegaValorDoFiltro(data["films"], "producer");
-console.log(produtores)                                                                            
+// console.log(produtores)                                                                            
 const filtroDiretor = document.getElementById("diretorOptgroup");
 const filtroProdutor = document.getElementById("produtorOptgroup");
 
@@ -46,7 +46,7 @@ produtores.forEach(function(produtor){
 function exibeFilmes ( valorEscolhido, ordemEscolhida){
     let listaFilmes = document.getElementById("listaFilmes");  
     let items = getMovies(valorEscolhido, ordemEscolhida);     
-    console.log(items)                                                           
+    // console.log(items)                                                           
     let liCard;
     exibeContas(items);
     
@@ -82,20 +82,20 @@ function exibeFilmes ( valorEscolhido, ordemEscolhida){
 }
 
 function ordenaItem(items, ordemEscolhida){
-
     if (ordemEscolhida == "ordemAlfabetica"){
-        return ordenaDados(items, "titulo", "asc" )
+        return ordenaDados(items, "title", "asc")
     }
     if (ordemEscolhida == "lancamentosRecentes"){
-        return ordenaDados(items, "dataLancamento", "desc" )
+        return ordenaDados(items, "release_date", "desc")
     }
     if (ordemEscolhida == "lancamentosAntigos"){
-        return ordenaDados(items, "dataLancamento", "asc" )
+        return ordenaDados(items, "release_date", "asc")
     }
     return items
- console.log("entrou")
+
 
 }
+
 
 // function grafico (){
 //     return calculo(data);
@@ -114,9 +114,35 @@ function ordenaItem(items, ordemEscolhida){
 
 function exibeContas(items){
     let resultado = document.getElementById("resultadoCalculo");
-    let valor= calculo(items)
-    console.log(valor)
-    resultado.innerHTML= `<p> A média da avaliação dos filmes é ${valor["mediaNotas"]}
-    .</p><p> A média de idade dos personagens é ${valor["mediaIdade"]} anos.</p><p> O personagem mais novo tem ${valor["maisJovem"]} anos.</p><p> E o personagem mais velho tem ${valor["maisVelho"]} anos.</p>` 
+    let valorMedia = calculo(items,"media", "rt_score" );
+
+    let personagens = []
+
+    items.map(function(film) {
+        film.people.map(function (person){
+            personagens.push(
+                {
+                    ...person,
+                    'title' : film.title
+                }
+            )
+        })
+    })
+
+    let valorMaior = calculo(personagens, "maior", "age");
+    let valorMenor = calculo(personagens, "menor", "age");
+    // console.log(valorMaior)
+    // console.log(valorMenor)
+    let mediaPersonagens = calculo(personagens, "media", "age");
+    // console.log(valorMedia)
+    
+    resultado.innerHTML= `<h3 style=" color:#b3c235;">Curiosidades: </h3>
+    <div class="info">
+    <p class = "texto"> A média da avaliação dos filmes é ${valorMedia} .</p>
+    <p class = "texto"> A média de idade dos personagens é de ${mediaPersonagens} anos.</p>
+    <p class = "texto"> O personagem mais novo é ${valorMenor.name} com ${valorMenor.age} anos do filme ${valorMenor.title}: </p><img src="${valorMenor.img}" style=" width:5%; height: 10% ">
+    <p class = "texto"> E o personagem mais velho é ${valorMaior.name} com ${valorMaior.age} anos do filme ${valorMaior.title}:</p><img src="${valorMaior.img}" style=" width:5%; height: 10%">
+    </div>` 
     return resultado
+    
 }

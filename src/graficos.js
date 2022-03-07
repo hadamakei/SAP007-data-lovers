@@ -1,5 +1,5 @@
-import { calculo } from './data.js';
-import data from './data/ghibli/ghibli.js';
+// import { calculo } from './data.js';
+// import data from './data/ghibli/ghibli.js';
 
 // import { } from './data.js';
 // import data from './data/ghibli/ghibli.js'
@@ -63,10 +63,10 @@ import data from './data/ghibli/ghibli.js';
 
 
 
-<script>
+{/* <script>
   const myChart = new Chart(
     document.getElementById('myChart'),
     config
   );
-</script>
+</script> */}
 
