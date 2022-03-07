@@ -5,7 +5,7 @@ export const filtraDados = (dados, campoDesejado, valorEscolhido) => {
     });
 }
 
-export const pegaValorDoFiltro = function (data, campoDesejado) {
+export const preencheValorTagOption = function (data, campoDesejado) {
     let ArrayRetorno = []
     data.map(function (elemento) {
         if (ArrayRetorno.indexOf(elemento[campoDesejado]) == -1) {
@@ -124,18 +124,29 @@ export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
 //console.log(calculo())
 
 export const calculo = (dados, tipoConta, campoCalcular) => {
-    let somaValor = 0
+    let soma
     switch(tipoConta){
         case "media":
-                
+            // console.log(dados)
                 dados = dados.filter(function(valor) {
                     return parseInt(valor[campoCalcular]) >= 0 ? true : false
-                });
-                dados.map(valor =>{
-                    somaValor += parseFloat(valor[campoCalcular])
-                });
-                somaValor = somaValor/dados.length
-                return somaValor.toFixed(2);
+                })
+                // console.log(dados)
+                soma = dados.reduce((somaValor, atual) => {
+                
+                    return somaValor + parseFloat(atual[campoCalcular])
+                }, 0)
+                // console.log()
+                return (soma/dados.length).toFixed(2)
+                
+                // dados.map(valor =>{                                                         //trocar por reduce?
+                //     somaValor += parseFloat(valor[campoCalcular])
+                // });
+                // somaValor = somaValor/dados.length
+                // return somaValor.toFixed(2);
+
+                
+
         case "maior":
         case "menor":
             dados = dados.filter(function(valor) {

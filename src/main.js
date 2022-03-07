@@ -1,4 +1,4 @@
-import { filtraDados, pegaValorDoFiltro, ordenaDados, calculo } from './data.js';
+import { filtraDados, ordenaDados, calculo,preencheValorTagOption } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 exibeFilmes([]);
@@ -25,9 +25,9 @@ function getMovies(valorEscolhido, ordemEscolhida) {
   return ordenaItem(filmes, ordemEscolhida)
 }
 
-let diretores = pegaValorDoFiltro(data["films"], "director");   
+let diretores = preencheValorTagOption(data["films"], "director");   
 // console.log(diretores)
-let produtores = pegaValorDoFiltro(data["films"], "producer");
+let produtores = preencheValorTagOption(data["films"], "producer");
 // console.log(produtores)                                                                            
 const filtroDiretor = document.getElementById("diretorOptgroup");
 const filtroProdutor = document.getElementById("produtorOptgroup");
