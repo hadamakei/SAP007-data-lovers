@@ -211,14 +211,14 @@
       "producer": "Hayao Miyazaki",
       "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg",
       "release_date": "1988",
-      "rt_score": "93",
+      "rt_score": "93", 
       "people": [
         {
           "id": "986faac6-67e3-4fb8-a9ee-bad077c2e7fe",
           "name": "Satsuki Kusakabe",
           "img": "https://static.wikia.nocookie.net/studio-ghibli/images/f/f2/Satsuki_Kusakabe.jpg",
           "gender": "Female",
-          "age": "11",
+          "age": "11", 
           "eye_color": "Dark Brown/Black",
           "hair_color": "Dark Brown",
           "specie": "Human"
@@ -288,7 +288,7 @@
           "name": "Chu Totoro",
           "img": "https://www.ghibli.jp/gallery/thumb-totoro019.png",
           "gender": "NA",
-          "age": "",
+          "age": "NA",
           "eye_color": "Black",
           "hair_color": "Blue",
           "specie": "Totoro"
@@ -298,7 +298,7 @@
           "name": "Chibi Totoro",
           "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c5/Little_Totoro_spirit_moving.gif",
           "gender": "NA",
-          "age": "",
+          "age": "NA",
           "eye_color": "Black",
           "hair_color": "White",
           "specie": "Totoro"

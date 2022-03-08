@@ -55,7 +55,6 @@ function exibeFilmes ( valorEscolhido, ordemEscolhida){
     items.forEach(function(movie){    
         //cria item na lista
         liCard = document.createElement("div");    
-           
         liCard.insertAdjacentHTML("beforeend",
         `
             <section class="div-borda" id=${movie.id}>  
@@ -101,24 +100,10 @@ function ordenaItem(items, ordemEscolhida){
 }
 
 
-// function grafico (){
-//     return calculo(data);
-// }
-
-// grafico();
-
-// function exibeGrafico(){
-//     let resultado = document.getElementById("resultadoCalculo");
-//     let valor= grafico()
-//     resultado.innerHTML= `${valor}`
-// }
-
-// exibeGrafico();
-
 
 function exibeContas(items){
     let resultado = document.getElementById("resultadoCalculo");
-    let valorMedia = calculo(items,"media", "rt_score" );
+    let mediaNotasAvaliacao = calculo(items,"media", "rt_score" );
 
     let personagens = []
 
@@ -133,19 +118,30 @@ function exibeContas(items){
         })
     })
 
-    let valorMaior = calculo(personagens, "maior", "age");
-    let valorMenor = calculo(personagens, "menor", "age");
-    // console.log(valorMaior)
-    // console.log(valorMenor)
+    console.log(personagens)
+    let idadeMaior = calculo(personagens, "maior", "age");
+    let idadeMenor = calculo(personagens, "menor", "age");
     let mediaPersonagens = calculo(personagens, "media", "age");
-    // console.log(valorMedia)
+
+    // let genero = []
+
+    // personagens.map(function(personagem){
+    //     genero.push({
+            
+    //         "gender" : personagem.gender
+        
+    //     })
+    // })
+
+    // console.log(genero)
+    // let mediaGenero = calculo(genero,"media", "Female" );
     
     resultado.innerHTML= `<h3 style=" color:#b3c235;">Curiosidades: </h3>
     <div class="info">
-    <p class = "texto"> A média da avaliação dos filmes é ${valorMedia} .</p>
+    <p class = "texto"> A média da avaliação dos filmes é ${mediaNotasAvaliacao} .</p>
     <p class = "texto"> A média de idade dos personagens é de ${mediaPersonagens} anos.</p>
-    <p class = "texto"> O personagem mais novo é ${valorMenor.name} com ${valorMenor.age} anos do filme ${valorMenor.title}: </p><img src="${valorMenor.img}" style=" width:5%; height: 10% ">
-    <p class = "texto"> E o personagem mais velho é ${valorMaior.name} com ${valorMaior.age} anos do filme ${valorMaior.title}:</p><img src="${valorMaior.img}" style=" width:5%; height: 10%">
+    <p class = "texto"> O personagem mais novo é ${idadeMenor.name} com ${idadeMenor.age} anos do filme ${idadeMenor.title}: </p><img src="${idadeMenor.img}" style=" width:5%; height: 10% ">
+    <p class = "texto"> E o personagem mais velho é ${idadeMaior.name} com ${idadeMaior.age} anos do filme ${idadeMaior.title}:</p><img src="${idadeMaior.img}" style=" width:5%; height: 10%">
     </div>` 
     return resultado
     

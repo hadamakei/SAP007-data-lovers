@@ -27,20 +27,6 @@ const dados = [
         "producer": "Isao Takahata",
         "release_date": "1986",
         "rt_score": "95",
-        "people": [
-            {
-                "name": "Pazu",
-                "gender": "Male",
-                "age": "13",
-            },
-            {
-                "name": "Lusheeta Toel Ul Laputa",
-                "gender": "Female",
-                "age": "13",
-                "specie": "Human"
-            },
-
-        ]
     },
     {
         "title": "My Neighbor Totoro",
@@ -48,20 +34,35 @@ const dados = [
         "producer": "Hayao Miyazaki",
         "release_date": "1988",
         "rt_score": "93",
-        "people": [
-            {
-                "name": "Satsuki Kusakabe",
-                "gender": "Female",
-                "age": "11",
-            },
-            {
-                "name": "Mei Kusakabe",
-                "gender": "Female",
-                "age": "4",
-            },
-        ]
+        
     }
 ]
+
+const dadosPersonagens = [
+    {
+        "name": "Pazu",
+        "gender": "Male",
+        "age": "13",
+    },
+    {
+        "name": "Lusheeta Toel Ul Laputa",
+        "gender": "Female",
+        "age": "13",
+        "specie": "Human",
+    },
+    {
+        "name": "Satsuki Kusakabe",
+        "gender": "Female",
+        "age": "11",
+    },
+    {
+        "name": "Mei Kusakabe",
+        "gender": "Female",
+        "age": "4",
+    }
+]
+
+
 
 describe('ordenaDados', () => {
 
@@ -69,116 +70,69 @@ describe('ordenaDados', () => {
         expect(typeof ordenaDados).toBe('function');
     });
 
-    it('return resultado de ordenaDados', () => {
-        let retornoEsperado = [{
-            "title": "My Neighbor Totoro",
-            "director": "Hayao Miyazaki",
-            "producer": "Hayao Miyazaki",
-            "release_date": "1988",
-            "rt_score": "93",
-            "people": [
-                {
-                    "name": "Satsuki Kusakabe",
-                    "gender": "Female",
-                    "age": "11",
-                },
-                {
-                    "name": "Mei Kusakabe",
-                    "gender": "Female",
-                    "age": "4",
-                },
-            ]
-        },
-        {
-            "title": "Castle in the Sky",
-            "director": "Hayao Miyazaki",
-            "producer": "Isao Takahata",
-            "release_date": "1986",
-            "rt_score": "95",
-            "people": [
-                {
-                    "name": "Pazu",
-                    "gender": "Male",
-                    "age": "13",
-                },
-                {
-                    "name": "Lusheeta Toel Ul Laputa",
-                    "gender": "Female",
-                    "age": "13",
-                    "specie": "Human"
-                },
-
-            ]
-        }];
+    it('return resultado de ordenaDados Z-A', () => {
+        let retornoEsperado = [
+            dados[1],
+            dados[0]
+        ];
 
         expect(ordenaDados(dados, "title", "desc")).toEqual(retornoEsperado)
-        // if(expect(ordenaDados(dados, "title", "desc")).toEqual(retornoEsperado)){
-        //     console.log("Ok")
-        // }else{
-        //     error: "Falhou"
-        // }
+        
+    })
 
+    it('return resultado de ordenaDados A-Z', () => {
+        let retornoEsperado = [
+            dados[0],
+            dados[1]
+        ];
+
+        expect(ordenaDados(dados, "title", "asc")).toEqual(retornoEsperado)
+        
+    })
+
+    it('return resultado de ordenaDados filme mais recente para mais antigo', () => {
+        let retornoEsperado = [
+            dados[1],
+            dados[0]
+        ];
+
+        expect(ordenaDados(dados, "release_date", "desc")).toEqual(retornoEsperado)
+        
+    })
+
+    it('return resultado de ordenaDados filme mais antigo para mais recente', () => {
+        let retornoEsperado = [
+            dados[0],
+            dados[1]
+        ];
+
+        expect(ordenaDados(dados, "release_date", "asc")).toEqual(retornoEsperado)
+        
     })
 });
 
-   //   it('returns retorno resposta errada OrdenaDados', () => {
-    //       let retornoEsperado = [{
-    //         "title": "My Neighbor Totoro",
-    //         "director": "Hayao Miyazaki",
-    //         "producer": "Hayao Miyazaki",
-    //         "release_date": "1988",
-    //         "rt_score": "93",
-    //         "people": [
-    //           {
-    //             "name": "Satsuki Kusakabe",
-    //             "gender": "Female",
-    //             "age": "11",
-    //           },
-    //           {
-    //             "name": "Mei Kusakabe",
-    //             "gender": "Female",
-    //             "age": "4",
-    //           },
-    //         ]
-    //       },
-    //       {
-    //         "title": "Castle in the Sky",
-    //         "director": "Hayao Miyazaki",
-    //         "producer": "Isao Takahata",
-    //         "release_date": "1986",
-    //         "rt_score": "95",
-    //         "people": [
-    //           {
-    //             "name": "Pazu",
-    //             "gender": "Male",
-    //             "age": "13",
-    //           },
-    //           {
-    //             "name": "Lusheeta Toel Ul Laputa",
-    //             "gender": "Female",
-    //             "age": "13",
-    //             "specie": "Human"
-    //           },
-
-    //         ]
-    //       }];
-
-
-    //         expect(ordenaDados(dados, "title", "asc")).toBe(retornoEsperado);
-
-    //       });
-
-    // })
-
+   
     describe('calculo', () => {
         it('é função', () => {
             expect(typeof calculo).toBe('function');
         });
 
-        it('returns resultado de calculo', () => {
+        it('returns resultado de calculo média de notas de filmes', () => {
 
             expect(calculo(dados, "media", "rt_score")).toBe('94.00');
         });
+
+        it('returns resultado de calculo média de idade dos personagens', () => {
+
+            expect(calculo(dadosPersonagens, "media", "age")).toBe('10.25');
+        });
+
+        it('returns resultado de maior idade dos personagens', () => {
+            
+            expect(calculo(dadosPersonagens, "maior", "age")).toEqual(dadosPersonagens[0]);
+        });
+
+
     });
 
     describe('filtraDados', () => {
@@ -187,48 +141,20 @@ describe('ordenaDados', () => {
         });
 
         it('returns resultado de filtraDados', () => {
-            let respostaCerta = [
-                {
-                    "title": "Castle in the Sky",
-                    "director": "Hayao Miyazaki",
-                    "producer": "Isao Takahata",
-                    "release_date": "1986",
-                    "rt_score": "95",
-                    "people": [
-                        {
-                            "name": "Pazu",
-                            "gender": "Male",
-                            "age": "13",
-                        },
-                        {
-                            "name": "Lusheeta Toel Ul Laputa",
-                            "gender": "Female",
-                            "age": "13",
-                            "specie": "Human"
-                        },
+            let respostaCerta = [dados[0]] 
 
-                    ]
-                }
-
-            ]
             expect(filtraDados(dados, "producer", "Isao Takahata")).toEqual(respostaCerta);
         });
 
 
         it('deve retornar um array com o filme "My Neighbor Totoro" para o producer "Hayao Miyazaki" ', () => {
             console.log(dados)
-           // expect(filtraDados(dados, "producer", "Hayao Miyazaki")).toEqual(dados[1]);
-            expect(filtraDados(dados, "producer", "Hayao Miyazaki").equals(dados[1])).toBe(true)
+            let respostaCerta = [dados[1]]
+
+            expect(filtraDados(dados, "producer", "Hayao Miyazaki")).toEqual(respostaCerta);
         });
         
-
-        it('deve retornar um array com o personagem "Pazu" do filme "Castle in the Sky" e genero "Male" ', () => {
-            console.log(dados)
-            expect(filtraDados(dados, "gender", "Male")).toStrictEqual(dados[0].people[0]);
-        });
-
-
-    });
+    }); 
 
 describe('preencheValorTagOption', () => {
     it('é função', () => {
@@ -236,14 +162,14 @@ describe('preencheValorTagOption', () => {
     });
 
     it('returns resultado de preencheValorTagOption', () => {
-        let respostaCerta = ["Hayao Miyazaki", "Isao Takahata"]
-        let resultado = ["Hayao Miyazaki"]
-        let resultadoPersonagem = ["My Neighbor Totoro", "Castle in the Sky",]
+        let respostaProdutor = [dados[0].producer, dados[1].producer ]
+        let resultadoDiretor = ["Hayao Miyazaki"]
+        let resultadoPersonagem = [dados[0].title, dados[1].title,]
 
 
-        expect(preencheValorTagOption(dados, "producer")).toBe(respostaCerta);
+        expect(preencheValorTagOption(dados, "producer")).toEqual(respostaProdutor);
 
-        expect(preencheValorTagOption(dados, "director")).toEqual(resultado);
+        expect(preencheValorTagOption(dados, "director")).toEqual(resultadoDiretor);
 
         expect(preencheValorTagOption(dados, "title")).toEqual(resultadoPersonagem);
 
