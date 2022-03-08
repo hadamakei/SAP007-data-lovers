@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Personagens Studio Ghibli</title>
-  <link rel="stylesheet" href="./css/personagens.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráficos Studio Ghibli</title>
+  <link rel="stylesheet" href="./css/graficos.css" />
 </head>
 
 <body>
@@ -12,39 +14,29 @@
     <div><img class="img-logo" src="./imagens/logo.png" alt="imagem studio ghibli"></div>
     <nav class="menu-nav">
       <ul>
+        <li><a href="personagens.html">Personagens</a></li>
         <li><a href="index.html">Filmes</a></li>
-        <li><a href="curiosidades.html">Curiosidades</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <h1 class="titulo-pagina">Personagens</h1>
+  <h1 class="titulo-pagina">Curiosidades</h1>
 
-    <form>
-      <div class="div-filtra-ordena">
-        <select class="label-filtra-ordena" id="selecioneGenero">
-          <option class="opcaoSelecionar" selected value="">Gênero</option>
-          <option value="Female">Feminino</option>
-          <option value="Male">Masculino</option>
-          <option value="NA">Indefinido</option>
-        </select>
+  <section class="">
+    <div class="chart-avaliacao">
+      <canvas id="chartAvaliacao" class=""></canvas>
+    </div>
 
-        <select class="label-filtra-ordena" id="selecioneFilme">
-          <option class="opcaoSelecionar" selected value="">Filmes</option>
-        </select>
+    <div class="infor-avaliacao" id="dadosDeAvaliacao"></div>
+  </section>
 
-        <select class="label-filtra-ordena" id="selecionaOrdem">
-          <option selected disabled>Ordenar</option>
-          <option value="ordemAlfabetica" id="">A &#8594 Z</option>
-          <option value="ordemReversaAlfabetica">Z &#8594 A </option>
-        </select>
-      </div>
-    </form>
+  <div>
+    <p class="resultadoCalculo" id="resultadoCalculo"></p>
+  </div>
 
-    <article id="cardPersonagens" class="div-galeria-personagens">
-    </article>
-  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <footer class="rodape">
     <div class="caixa-rodape">
@@ -67,7 +59,8 @@
     </div>
   </footer>
 
-  <script src="personagens.js" type="module"></script>
+  <script src="curiosidades.js" type="module"></script>
+
 </body>
 
 </html>

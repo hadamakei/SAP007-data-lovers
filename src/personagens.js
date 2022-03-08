@@ -95,10 +95,10 @@ function exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida){
 function ordenaPersonagem (characters, ordemEscolhida){
     if(ordemEscolhida == "ordemAlfabetica"){ 
         
-        ordenaDados(characters, "name", "asc",);
+        characters = ordenaDados(characters, "name", "asc",);
     }
     if(ordemEscolhida == "ordemReversaAlfabetica") {
-        ordenaDados(characters, "name", "desc");
+        characters = ordenaDados(characters, "name", "desc");
     }
     return characters
 }

@@ -1,8 +1,10 @@
 @import url(padrao.css);
 
-body{
+ body{
   width: 100%;
-}
+} 
+
+
 
 .descrição-pagina{ 
   font-size: 1.2rem;

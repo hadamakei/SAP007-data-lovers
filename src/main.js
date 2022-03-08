@@ -55,7 +55,6 @@ function exibeFilmes ( valorEscolhido, ordemEscolhida){
     items.forEach(function(movie){    
         //cria item na lista
         liCard = document.createElement("div");    
-           
         liCard.insertAdjacentHTML("beforeend",
         `
             <section class="div-borda" id=${movie.id}>  
@@ -87,33 +86,19 @@ function exibeFilmes ( valorEscolhido, ordemEscolhida){
 
 function ordenaItem(items, ordemEscolhida){
     if (ordemEscolhida == "ordemAlfabetica"){
-        return ordenaDados(items, "title", "asc")
+        items = ordenaDados(items, "title", "asc")
     }
     if (ordemEscolhida == "lancamentosRecentes"){
-        return ordenaDados(items, "release_date", "desc")
+        items = ordenaDados(items, "release_date", "desc")
     }
     if (ordemEscolhida == "lancamentosAntigos"){
-        return ordenaDados(items, "release_date", "asc")
+        items = ordenaDados(items, "release_date", "asc")
     }
     return items
 
 
 }
 
-
-// function grafico (){
-//     return calculo(data);
-// }
-
-// grafico();
-
-// function exibeGrafico(){
-//     let resultado = document.getElementById("resultadoCalculo");
-//     let valor= grafico()
-//     resultado.innerHTML= `${valor}`
-// }
-
-// exibeGrafico();
 
 
 function exibeContas(items){
@@ -135,10 +120,7 @@ function exibeContas(items){
 
     let valorMaior = calculo(personagens, "maior", "age");
     let valorMenor = calculo(personagens, "menor", "age");
-    // console.log(valorMaior)
-    // console.log(valorMenor)
     let mediaPersonagens = calculo(personagens, "media", "age");
-    // console.log(valorMedia)
     
     resultado.innerHTML= `<h3 style=" color:#b3c235;">Curiosidades: </h3>
     <div class="info">
