@@ -51,7 +51,7 @@ export const preencheValorTagOption = function (data, campoDesejado) {
 export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
     if(ordenaPor == '') return items
     let valorA, valorB
-    items.sort(function (a,b)  {
+    let returnArray = [...items].sort(function (a,b)  {
         valorA = a[ordenaPor]
         valorB = b[ordenaPor]
         if(direcaoOrdem == 'asc') {
@@ -61,7 +61,7 @@ export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
         }
     });
     // console.log(items)
-    return items
+    return returnArray
    
 
     // if(opcaoValor ==  "ordemAlfabetica"){

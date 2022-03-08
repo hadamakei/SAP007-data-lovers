@@ -87,13 +87,13 @@ function exibeFilmes ( valorEscolhido, ordemEscolhida){
 
 function ordenaItem(items, ordemEscolhida){
     if (ordemEscolhida == "ordemAlfabetica"){
-        return ordenaDados(items, "title", "asc")
+        items = ordenaDados(items, "title", "asc")
     }
     if (ordemEscolhida == "lancamentosRecentes"){
-        return ordenaDados(items, "release_date", "desc")
+        items = ordenaDados(items, "release_date", "desc")
     }
     if (ordemEscolhida == "lancamentosAntigos"){
-        return ordenaDados(items, "release_date", "asc")
+        items =  ordenaDados(items, "release_date", "asc")
     }
     return items
 
