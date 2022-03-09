@@ -25,6 +25,7 @@ body{
   flex-direction: row;
   background-color: #092640;
   font-size: 100%;
+  margin: 0;
 }
 
 .menu-nav {
