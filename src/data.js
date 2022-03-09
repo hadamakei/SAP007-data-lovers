@@ -24,7 +24,18 @@ export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
     let returnArray = [...items].sort(function (a,b)  {
         valorA = a[ordenaPor]
         valorB = b[ordenaPor]
-        if(direcaoOrdem == 'asc') {
+
+        if(parseInt(valorA) >= 0) { //Se for número entra no if
+            if (parseInt(valorA) < parseInt(valorB)) {
+                return direcaoOrdem == 'asc' ? -1 : 1;
+            }
+            if (parseInt(valorA) > parseInt(valorB)) {
+                return direcaoOrdem == 'asc' ? 1 : -1;
+            }
+            return 0;
+        }
+
+        if(direcaoOrdem == 'asc') { //Caso chegue aqui, é string
             return valorA.localeCompare(valorB);
         } else {
             return valorB.localeCompare(valorA);
@@ -62,8 +73,9 @@ export const calculo = (dados, tipoConta, campoCalcular) => {
                 
             })
             
-            
+            console.log(dados)
             dados = ordenaDados(dados, campoCalcular, "desc")
+            console.log(dados)
             if (tipoConta == "maior"){
                 return dados[0]
             }else{

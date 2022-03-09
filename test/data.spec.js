@@ -128,8 +128,9 @@ describe('ordenaDados', () => {
         });
 
         it('returns resultado de maior idade dos personagens', () => {
+            let respostaMaior = dadosPersonagens[0]
             
-            expect(calculo(dadosPersonagens, "maior", "age")).toEqual(dadosPersonagens[0]);
+            expect(calculo(dadosPersonagens, "maior", "age")).toEqual(respostaMaior);
         });
 
 

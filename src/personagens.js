@@ -1,4 +1,4 @@
-import { filtraDados, ordenaDados, preencheValorTagOption } from './data.js';
+import { filtraDados, ordenaDados, preencheValorTagOption, calculo } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -103,4 +103,32 @@ function ordenaPersonagem (characters, ordemEscolhida){
     return characters
 }
 
+
+const dadosPersonagens = [
+    {
+        "name": "Pazu",
+        "gender": "Male",
+        "age": "13",
+    },
+    {
+        "name": "Lusheeta Toel Ul Laputa",
+        "gender": "Female",
+        "age": "13",
+        "specie": "Human",
+    },
+    {
+        "name": "Satsuki Kusakabe",
+        "gender": "Female",
+        "age": "11",
+    },
+    {
+        "name": "Mei Kusakabe",
+        "gender": "Female",
+        "age": "4",
+    }
+]
+
+let idadeMaior = calculo(dadosPersonagens, "maior", "age");
+
+console.log(idadeMaior)
 
