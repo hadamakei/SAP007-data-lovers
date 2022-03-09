@@ -26,6 +26,7 @@ body{
 .div-filtra-ordena{
     display:flex;
     align-items:center;
+    flex-direction:row;
     width:20%;
     margin-left: 45%;
     margin-bottom:20px;

@@ -45,14 +45,14 @@ produtores.forEach(function (produtor) {
 
 function exibeFilmes ( valorEscolhido, ordemEscolhida){
     let listaFilmes = document.getElementById("listaFilmes");  
-    let items = getMovies(valorEscolhido, ordemEscolhida);     
-    // console.log(items)                                                           
+    let itens = getMovies(valorEscolhido, ordemEscolhida);     
+    // console.log(itens)                                                           
     let liCard;
-    exibeContas(items);
+    exibeContas(itens);
     
     listaFilmes.innerHTML = "";
     //percorre cada item do array ; 
-    items.forEach(function(movie){    
+    itens.forEach(function(movie){    
         //cria item na lista
         liCard = document.createElement("div");    
         liCard.insertAdjacentHTML("beforeend",
@@ -84,17 +84,17 @@ function exibeFilmes ( valorEscolhido, ordemEscolhida){
   });
 }
 
-function ordenaItem(items, ordemEscolhida){
+function ordenaItem(itens, ordemEscolhida){
     if (ordemEscolhida == "ordemAlfabetica"){
-        items = ordenaDados(items, "title", "asc")
+        itens = ordenaDados(itens, "title", "asc")
     }
     if (ordemEscolhida == "lancamentosRecentes"){
-        items = ordenaDados(items, "release_date", "desc")
+        itens = ordenaDados(itens, "release_date", "desc")
     }
     if (ordemEscolhida == "lancamentosAntigos"){
-        items =  ordenaDados(items, "release_date", "asc")
+        itens =  ordenaDados(itens, "release_date", "asc")
     }
-    return items
+    return itens
 
 
 }
@@ -118,7 +118,6 @@ function exibeContas(items){
         })
     })
 
-    console.log(personagens)
     let idadeMaior = calculo(personagens, "maior", "age");
     let idadeMenor = calculo(personagens, "menor", "age");
     let mediaPersonagens = calculo(personagens, "media", "age");

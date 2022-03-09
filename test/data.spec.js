@@ -1,26 +1,6 @@
-import { calculo, ordenaDados, filtraDados, preencheValorTagOption } from '../src/data.js';
+import { filtraDados, preencheValorTagOption, ordenaDados, calculo, calculoAgregado } from '../src/data.js';
 
-// describe('example', () => {
-//   it('is a function', () => {
-//     expect(typeof example).toBe('function');
-//   });
-
-//   it('returns `example`', () => {
-//     expect(example()).toBe('example');
-//   });
-// });
-
-
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
-
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
-const dados = [
+const objFilmes = [
     {
         "title": "Castle in the Sky",
         "director": "Hayao Miyazaki",
@@ -34,11 +14,11 @@ const dados = [
         "producer": "Hayao Miyazaki",
         "release_date": "1988",
         "rt_score": "93",
-        
+
     }
 ]
 
-const dadosPersonagens = [
+const objPersonagens = [
     {
         "name": "Pazu",
         "gender": "Male",
@@ -62,119 +42,105 @@ const dadosPersonagens = [
     }
 ]
 
-
-
-describe('ordenaDados', () => {
-
-    it('is a function', () => {
-        expect(typeof ordenaDados).toBe('function');
+describe('filtraDados', () => {
+    it('é função', () => {
+        expect(typeof filtraDados).toBe('function');
     });
 
-    it('return resultado de ordenaDados Z-A', () => {
-        let retornoEsperado = [
-            dados[1],
-            dados[0]
-        ];
+    it('resultado de filtraDados', () => {
+        let retornoEsperado = [objFilmes[0]]
+        expect(filtraDados(objFilmes, "producer", "Isao Takahata")).toEqual(retornoEsperado);
+    });
 
-        expect(ordenaDados(dados, "title", "desc")).toEqual(retornoEsperado)
-        
-    })
-
-    it('return resultado de ordenaDados A-Z', () => {
-        let retornoEsperado = [
-            dados[0],
-            dados[1]
-        ];
-
-        expect(ordenaDados(dados, "title", "asc")).toEqual(retornoEsperado)
-        
-    })
-
-    it('return resultado de ordenaDados filme mais recente para mais antigo', () => {
-        let retornoEsperado = [
-            dados[1],
-            dados[0]
-        ];
-
-        expect(ordenaDados(dados, "release_date", "desc")).toEqual(retornoEsperado)
-        
-    })
-
-    it('return resultado de ordenaDados filme mais antigo para mais recente', () => {
-        let retornoEsperado = [
-            dados[0],
-            dados[1]
-        ];
-
-        expect(ordenaDados(dados, "release_date", "asc")).toEqual(retornoEsperado)
-        
-    })
+    it('deve retornar um array com o filme "My Neighbor Totoro" para o producer "Hayao Miyazaki" ', () => {
+        let retornoEsperado = [objFilmes[1]]
+        expect(filtraDados(objFilmes, "producer", "Hayao Miyazaki")).toEqual(retornoEsperado);
+    });
 });
-
-   
-    describe('calculo', () => {
-        it('é função', () => {
-            expect(typeof calculo).toBe('function');
-        });
-
-        it('returns resultado de calculo média de notas de filmes', () => {
-
-            expect(calculo(dados, "media", "rt_score")).toBe('94.00');
-        });
-
-        it('returns resultado de calculo média de idade dos personagens', () => {
-
-            expect(calculo(dadosPersonagens, "media", "age")).toBe('10.25');
-        });
-
-        it('returns resultado de maior idade dos personagens', () => {
-            let respostaMaior = dadosPersonagens[0]
-            
-            expect(calculo(dadosPersonagens, "maior", "age")).toEqual(respostaMaior);
-        });
-
-
-    });
-
-    describe('filtraDados', () => {
-        it('é função', () => {
-            expect(typeof filtraDados).toBe('function');
-        });
-
-        it('returns resultado de filtraDados', () => {
-            let respostaCerta = [dados[0]] 
-
-            expect(filtraDados(dados, "producer", "Isao Takahata")).toEqual(respostaCerta);
-        });
-
-
-        it('deve retornar um array com o filme "My Neighbor Totoro" para o producer "Hayao Miyazaki" ', () => {
-            console.log(dados)
-            let respostaCerta = [dados[1]]
-
-            expect(filtraDados(dados, "producer", "Hayao Miyazaki")).toEqual(respostaCerta);
-        });
-        
-    }); 
 
 describe('preencheValorTagOption', () => {
     it('é função', () => {
         expect(typeof preencheValorTagOption).toBe('function');
     });
 
-    it('returns resultado de preencheValorTagOption', () => {
-        let respostaProdutor = [dados[0].producer, dados[1].producer ]
+    it('resultado de preencheValorTagOption', () => {
+        let resultadoProdutor = [objFilmes[0].producer, objFilmes[1].producer]
         let resultadoDiretor = ["Hayao Miyazaki"]
-        let resultadoPersonagem = [dados[0].title, dados[1].title,]
-
-
-        expect(preencheValorTagOption(dados, "producer")).toEqual(respostaProdutor);
-
-        expect(preencheValorTagOption(dados, "director")).toEqual(resultadoDiretor);
-
-        expect(preencheValorTagOption(dados, "title")).toEqual(resultadoPersonagem);
-
+        let resultadoPersonagem = [objFilmes[0].title, objFilmes[1].title,]
+        expect(preencheValorTagOption(objFilmes, "producer")).toEqual(resultadoProdutor);
+        expect(preencheValorTagOption(objFilmes, "director")).toEqual(resultadoDiretor);
+        expect(preencheValorTagOption(objFilmes, "title")).toEqual(resultadoPersonagem);
     });
+});
+
+describe('ordenaDados', () => {
+    it('is a function', () => {
+        expect(typeof ordenaDados).toBe('function');
+    });
+
+    it('resultado de ordenaDados Z-A', () => {
+        let retornoEsperado = [objFilmes[1], objFilmes[0]];
+        expect(ordenaDados(objFilmes, "title", "desc")).toEqual(retornoEsperado);
+    })
+
+    it('resultado de ordenaDados A-Z', () => {
+        let retornoEsperado = [objFilmes[0], objFilmes[1]];
+        expect(ordenaDados(objFilmes, "title", "asc")).toEqual(retornoEsperado);
+    })
+
+    it('resultado de ordenaDados filme mais recente para mais antigo', () => {
+        let retornoEsperado = [objFilmes[1], objFilmes[0]];
+        expect(ordenaDados(objFilmes, "release_date", "desc")).toEqual(retornoEsperado);
+    })
+
+    it('resultado de ordenaDados filme mais antigo para mais recente', () => {
+        let retornoEsperado = [objFilmes[0], objFilmes[1]];
+        expect(ordenaDados(objFilmes, "release_date", "asc")).toEqual(retornoEsperado);
+    })
+
+    it('resultado de ordenaDados sem valor de filtro', () => {
+        let retornoEsperado = objFilmes;
+        expect(ordenaDados(objFilmes, "", "asc")).toEqual(retornoEsperado);
+    })
+});
+
+
+describe('calculo', () => {
+    it('é função', () => {
+        expect(typeof calculo).toBe('function');
+    });
+
+    it('resultado de calculo média de notas de filmes', () => {
+
+        expect(calculo(objFilmes, "media", "rt_score")).toBe('94.00');
+    });
+
+    it('resultado de calculo média de idade dos personagens', () => {
+
+        expect(calculo(objPersonagens, "media", "age")).toBe('10.25');
+    });
+
+    it('resultado de maior idade dos personagens', () => {
+        let respostaMaior = objPersonagens[0]
+
+        expect(calculo(objPersonagens, "maior", "age")).toEqual(respostaMaior);
+    });
+
+    it('resultado de personagens com menor idade', () => {
+        let respostaMenor = objPersonagens[3]
+
+        expect(calculo(objPersonagens, "menor", "age")).toEqual(respostaMenor);
+    });
+
 
 });
 
+describe('calculoAgregado', () => {
+    it('é função', () => {
+        expect(typeof calculoAgregado).toBe('function');
+    })
+    it('returna resultado de calculo da média de avaliação dos filmes', () => {
+        let notas = ["95", "93"]
+        expect(calculoAgregado(notas)).toEqual('94.00');
+    })
+});

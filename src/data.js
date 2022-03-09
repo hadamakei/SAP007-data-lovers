@@ -18,10 +18,10 @@ export const preencheValorTagOption = function (data, campoDesejado) {
 }
 
 //funcao que ordena dados dos filmes e personagens
-export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
-    if(ordenaPor == '') return items
+export const ordenaDados = (itens, ordenaPor, direcaoOrdem) => {
+    if(ordenaPor == '')  return itens 
     let valorA, valorB
-    let returnArray = [...items].sort(function (a,b)  {
+    let returnaArray = [...itens].sort(function (a,b)  {
         valorA = a[ordenaPor]
         valorB = b[ordenaPor]
 
@@ -41,41 +41,27 @@ export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
             return valorB.localeCompare(valorA);
         }
     });
-    return returnArray
+    return returnaArray
 };
 
+//funcao de calculo agregado para filmes e personagens
 export const calculo = (dados, tipoConta, campoCalcular) => {
     let soma;
-  //  let maisJovem;
-  //  let maisVelho;
-   // let contadorPersonagens;
-  //  let somaIdade = 0
     switch(tipoConta){
         case "media":
                 dados = dados.filter(function(valor) {
                     return parseInt(valor[campoCalcular]) >= 0 ? true : false
                 })
                 soma = dados.reduce((somaValor, atual) => {
-                
                     return somaValor + parseFloat(atual[campoCalcular])
                 }, 0)
                 return (soma/dados.length).toFixed(2)
         case "maior":
         case "menor":
             dados = dados.filter(function(personagem) {
-                // if (parseInt(personagem.age)) {
-                //     somaIdade += parseInt(personagem.age)
-                //     contadorPersonagens++
-                //     maisJovem = (maisJovem > personagem.age) || maisJovem == 0 ? personagem.age : maisJovem
-                //     maisVelho = maisVelho < personagem.age ? personagem.age : maisVelho
-                // }
                 return parseInt(personagem[campoCalcular]) >= 0 ? true : false
-                
             })
-            
-            console.log(dados)
             dados = ordenaDados(dados, campoCalcular, "desc")
-            console.log(dados)
             if (tipoConta == "maior"){
                 return dados[0]
             }else{
@@ -83,15 +69,9 @@ export const calculo = (dados, tipoConta, campoCalcular) => {
             }
         }
 }
-//         case "mediaGenero":
-//                 dados = dados.filter(function(valor) {
-//                     return (valor[campoCalcular]) >= "" ? true : false
-//                 })
-//                 soma = dados.filter(function(somaValor, atual) => {
-                    
-//                     return somaValor + atual[campoCalcular]
-//                 }, 0)
-//                 return (soma/dados.length).toFixed(2)
-    
-// }
+
+export const calculoAgregado = (dados) => {
+    return dados.reduce((acum, atual) => acum + atual, 0)/ dados.length
+};
+
 
