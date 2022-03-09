@@ -18,10 +18,10 @@ export const preencheValorTagOption = function (data, campoDesejado) {
 }
 
 //funcao que ordena dados dos filmes e personagens
-export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
-    if(ordenaPor == '') return items
+export const ordenaDados = (itens, ordenaPor, direcaoOrdem) => {
+    if(ordenaPor == '') return itens
     let valorA, valorB
-    let returnArray = [...items].sort(function (a,b)  {
+    let returnaArray = [...itens].sort(function (a,b)  {
         valorA = a[ordenaPor]
         valorB = b[ordenaPor]
         if(direcaoOrdem == 'asc') {
@@ -30,9 +30,10 @@ export const ordenaDados = (items, ordenaPor, direcaoOrdem) => {
             return valorB.localeCompare(valorA);
         }
     });
-    return returnArray
+    return returnaArray
 };
 
+//funcao de calculo agregado para filmes e personagens
 export const calculo = (dados, tipoConta, campoCalcular) => {
     let soma;
   //  let maisJovem;
@@ -59,10 +60,7 @@ export const calculo = (dados, tipoConta, campoCalcular) => {
                 //     maisVelho = maisVelho < personagem.age ? personagem.age : maisVelho
                 // }
                 return parseInt(personagem[campoCalcular]) >= 0 ? true : false
-                
             })
-            
-            
             dados = ordenaDados(dados, campoCalcular, "desc")
             if (tipoConta == "maior"){
                 return dados[0]
@@ -81,5 +79,17 @@ export const calculo = (dados, tipoConta, campoCalcular) => {
 //                 }, 0)
 //                 return (soma/dados.length).toFixed(2)
     
+// }
+
+
+export const calculoAgregado = (dados) => {
+    return dados.reduce((acum, atual) => acum + atual, 0) / dados.length
+    };
+
+// export const calculoAgregado = (data) => {
+//     const total = data.reduce((acum, atual) => {
+//         return acum + atual.data
+//     }, 0)
+//     return total/data.length
 // }
 
