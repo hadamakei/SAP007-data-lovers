@@ -45,7 +45,7 @@ export const ordenaDados = (itens, ordenaPor, direcaoOrdem) => {
 };
 
 //funcao de calculo agregado para filmes e personagens
-export const calculo = (dados, tipoConta, campoCalcular) => {
+export const calculoAgregado = (dados, tipoConta, campoCalcular) => {
     let soma;
     switch(tipoConta){
         case "media":
@@ -69,9 +69,5 @@ export const calculo = (dados, tipoConta, campoCalcular) => {
             }
         }
 }
-
-export const calculoAgregado = (dados) => {
-    return dados.reduce((acum, atual) => acum + atual, 0)/ dados.length
-};
 
 

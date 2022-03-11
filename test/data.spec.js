@@ -1,4 +1,4 @@
-import { filtraDados, preencheValorTagOption, ordenaDados, calculo, calculoAgregado } from '../src/data.js';
+import { filtraDados, preencheValorTagOption, ordenaDados, calculoAgregado } from '../src/data.js';
 
 const objFilmes = [
     {
@@ -14,7 +14,6 @@ const objFilmes = [
         "producer": "Hayao Miyazaki",
         "release_date": "1988",
         "rt_score": "93",
-
     }
 ]
 
@@ -48,12 +47,12 @@ describe('filtraDados', () => {
     });
 
     it('resultado de filtraDados', () => {
-        let retornoEsperado = [objFilmes[0]]
+        let retornoEsperado = [objFilmes[0]];
         expect(filtraDados(objFilmes, "producer", "Isao Takahata")).toEqual(retornoEsperado);
     });
 
     it('deve retornar um array com o filme "My Neighbor Totoro" para o producer "Hayao Miyazaki" ', () => {
-        let retornoEsperado = [objFilmes[1]]
+        let retornoEsperado = [objFilmes[1]];
         expect(filtraDados(objFilmes, "producer", "Hayao Miyazaki")).toEqual(retornoEsperado);
     });
 });
@@ -105,31 +104,27 @@ describe('ordenaDados', () => {
 });
 
 
-describe('calculo', () => {
+describe('calculoAgregado', () => {
     it('é função', () => {
-        expect(typeof calculo).toBe('function');
+        expect(typeof calculoAgregado).toBe('function');
     });
 
     it('resultado de calculo média de notas de filmes', () => {
-
-        expect(calculo(objFilmes, "media", "rt_score")).toBe('94.00');
+        expect(calculoAgregado(objFilmes, "media", "rt_score")).toBe('94.00');
     });
 
     it('resultado de calculo média de idade dos personagens', () => {
-
-        expect(calculo(objPersonagens, "media", "age")).toBe('10.25');
+        expect(calculoAgregado(objPersonagens, "media", "age")).toBe('10.25');
     });
 
     it('resultado de maior idade dos personagens', () => {
-        let respostaMaior = objPersonagens[0]
-
-        expect(calculo(objPersonagens, "maior", "age")).toEqual(respostaMaior);
+        let respostaMaior = objPersonagens[0];
+        expect(calculoAgregado(objPersonagens, "maior", "age")).toEqual(respostaMaior);
     });
 
     it('resultado de personagens com menor idade', () => {
-        let respostaMenor = objPersonagens[3]
-
-        expect(calculo(objPersonagens, "menor", "age")).toEqual(respostaMenor);
+        let respostaMenor = objPersonagens[3];
+        expect(calculoAgregado(objPersonagens, "menor", "age")).toEqual(respostaMenor);
     });
 
 
@@ -144,3 +139,4 @@ describe('calculoAgregado', () => {
         expect(calculoAgregado(notas)).toEqual(94);
     })
 });
+
