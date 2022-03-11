@@ -1,15 +1,48 @@
-import { calculoAgregado, calculo } from './data.js';
+import { calculoAgregado } from './data.js';
 import data from './data/ghibli/ghibli.js'
 
-const filme = data.films
+const dados = data.films
 
-const tituloDoFilme = filme.map(film => film.title)
-const avaliacaoDoFilme = filme.map(film => film["rt_score"])
-console.log(avaliacaoDoFilme)
-const chartMediaDeAvaliacao = document.getElementById("chartMediaDeAvaliacao")
+function exibeIdadeDePersonagens(data) {
+  const resultado = document.getElementById("resultadoIdadePersonagens");
+  const personagens = []
+  data.map(function (film) {
+    film.people.map(function (person) {
+      personagens.push(
+        {
+          ...person,
+          'title': film.title
+        }
+      )
+    })
+  })
+  const personagemMaiorIdade = calculoAgregado(personagens, "maior", "age");
+  const personagemMenorIdade = calculoAgregado(personagens, "menor", "age");
+  const idadeMediaDePersonagens = calculoAgregado(personagens, "media", "age");
+  resultado.innerHTML = `
+    <div>
+          <p class="texto-media-idade-personagens"> A média de idade dos personagens é de <strong  class="resultado-media">${idadeMediaDePersonagens}</strong> anos.</p>
+          
+          <p> O personagem mais novo é ${personagemMenorIdade.name} com ${personagemMenorIdade.age} anos do filme ${personagemMenorIdade.title}:</p>
+          
+          <div class="div-img">
+            <img class="img-personagem" src="${personagemMenorIdade.img}" alt="imagem ref. ao personagem style= height = "12%", width= "15%">
+         </div>
+         <p>E o personagem mais velho é ${personagemMaiorIdade.name} com ${personagemMaiorIdade.age} anos do filme ${personagemMaiorIdade.title}:</p>
+          
+         <div class="div-img">
+           <img class="img-personagem" src="${personagemMaiorIdade.img}" alt="imagem ref. ao personagem style= height  = "12%", width= "15%">
+         </div>
+    </div>
+  `
+}
+exibeIdadeDePersonagens(dados)
 
 
-// função que printa o grafico da nota média de avaliação de cada filme
+const tituloDoFilme = dados.map(film => film.title)
+const avaliacaoDoFilme = dados.map(film => film["rt_score"])
+
+// Printa o grafico da nota média de avaliação de cada filme
 // eslint-disable-next-line no-undef
 new Chart(chartMediaDeAvaliacao, {
   type: 'bar',
@@ -42,53 +75,50 @@ new Chart(chartMediaDeAvaliacao, {
 
 })
 
-
-const exibeMediaDeAvaliacao = (dataFilmes) => {
-  let avaliacaoDoFilme = []
-  for (let Filme of dataFilmes) {
-    let numeroDaAvaliacao = parseInt(Filme["rt_score"])
-    avaliacaoDoFilme.push(numeroDaAvaliacao)
-  }
-  console.log(avaliacaoDoFilme)
-  const printaoMediaDeAvaliacao = document.getElementById("resultadoMediaDeAvaliacao")
-  printaoMediaDeAvaliacao.innerHTML =
+function exibeMediaDeAvaliacao(avaliacaoDoFilme) {
+  const resultadoMediaDeAvaliacao = document.getElementById("resultadoMediaDeAvaliacao");
+  resultadoMediaDeAvaliacao.innerHTML =
     `<div class="printa-avaliacao">
-            <div class="box-avaliacao">
-                <p>A média de notas dos filmes é <strong class="resultado-media-de-avaliacao">${calculoAgregado(avaliacaoDoFilme)}</strong></p>
-            </div>
-        </div>`
+        <p>A média de notas dos filmes é <strong class="resultado-media">${calculoAgregado(avaliacaoDoFilme, "media", "rt_score")}</strong>
+        </p>
+    </div>`
 }
-exibeMediaDeAvaliacao(filme)
+exibeMediaDeAvaliacao(dados)
 
 
-// const personagens = data...people
-function exibeMediaDePersonagens(data){
-  let resultado = document.getElementById("resultadoMediaDePersonagens");
+// const generoPersonagens = dados.map(film => film.people)
+// console.log(generoPersonagens)
+const masculino = dados
+const feminino = dados
+const indefinido = dados
 
-  let personagens = []
+// Printa o grafico da qnt de personagens por genero
+// eslint-disable-next-line no-undef
+new Chart(chartGeneroDePersonagens, {
 
-  data.map(function(film) {
-      film.people.map(function (person){
-          personagens.push(
-              {
-                  ...person,
-                  'title' : film.title
-              }
-          )
-      })
-  })
+  type: 'pie',
+  data: {
+    labels: ['Masculino', 'Feminino', 'Indefinido'],
+    datasets: [{
+      label: 'Status', //TITULO GRAFICO
+      data: [masculino.length, feminino.length, indefinido.length],
+      backgroundColor: [
+        'rgb(100, 145, 60, 0.5)',
+        'rgb(139, 18, 123)',
+        'rgb(52, 45, 161)',
+      ],
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "GÊNERO"
+    }
+  }
 
-  let valorMaior = calculo(personagens, "maior", "age");
-  let valorMenor = calculo(personagens, "menor", "age");
-  let mediaPersonagens = calculo(personagens, "media", "age");
-  resultado.innerHTML= `
-  <div class="info">
-  <p class = "texto"> A média de idade dos personagens é de ${mediaPersonagens} anos.</p>
-  <p class = "texto"> O personagem mais novo é ${valorMenor.name} com ${valorMenor.age} anos do filme ${valorMenor.title}: </p><img src="${valorMenor.img}" style=" width:5%; height: 10% ">
-  <p class = "texto"> E o personagem mais velho é ${valorMaior.name} com ${valorMaior.age} anos do filme ${valorMaior.title}:</p><img src="${valorMaior.img}" style=" width:5%; height: 10%">
-  </div>` 
- }
- exibeMediaDePersonagens(filme)
+});
+
+
 
 
 

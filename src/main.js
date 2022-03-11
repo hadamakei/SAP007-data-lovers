@@ -1,4 +1,4 @@
-import { filtraDados, ordenaDados, calculo,preencheValorTagOption } from './data.js';
+import { filtraDados, ordenaDados, preencheValorTagOption } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 exibeFilmes([]);
@@ -7,37 +7,33 @@ const ordemFiltro = document.getElementById("selecionaOrdem");
 let filtrarEOrdenar = function() {
     let valorEscolhido = filtro.value;
     let ordemEscolhida = ordemFiltro.value
-    // console.log(ordemEscolhida)
     if (valorEscolhido == ""){
         valorEscolhido = []
     } else {
         valorEscolhido = valorEscolhido.split("."); //["diretor" "nome"] produtor.Nome
     }
-    // console.log(valorEscolhido)
     exibeFilmes(valorEscolhido, ordemEscolhida);
 }
 filtro.addEventListener("change", filtrarEOrdenar)
 ordemFiltro.addEventListener("change", filtrarEOrdenar)
 
 //funcao que manda pro filtro de filme os dados e recebe o array com todos os filmes
-function getMovies(valorEscolhido, ordemEscolhida) {
+function pegaFilmes(valorEscolhido, ordemEscolhida) {
   let filmes = filtraDados(data["films"], valorEscolhido[0], valorEscolhido[1]);
   return ordenaItem(filmes, ordemEscolhida)
 }
 
 let diretores = preencheValorTagOption(data["films"], "director");   
-// console.log(diretores)
 let produtores = preencheValorTagOption(data["films"], "producer");
-// console.log(produtores)                                                                            
 const filtroDiretor = document.getElementById("diretorOptgroup");
 const filtroProdutor = document.getElementById("produtorOptgroup");
 
-//cria filtro de diretores no html
+//cria lista de opções no filtro dediretores no html
 diretores.forEach(function (diretor) {
   filtroDiretor.innerHTML += `<option value= "director.${diretor}">${diretor}</option>`
 });
 
-//cria filtro de produtores no html
+//cria lista de opções no filtro de produtores no html
 produtores.forEach(function (produtor) {
   filtroProdutor.insertAdjacentHTML('beforeend',
     `<option value= "producer.${produtor}"> ${produtor}</option>`)
@@ -45,17 +41,13 @@ produtores.forEach(function (produtor) {
 
 function exibeFilmes ( valorEscolhido, ordemEscolhida){
     let listaFilmes = document.getElementById("listaFilmes");  
-    let itens = getMovies(valorEscolhido, ordemEscolhida);     
-    // console.log(itens)                                                           
-    let liCard;
-    exibeContas(itens);
-    
+    let itens = pegaFilmes(valorEscolhido, ordemEscolhida);     
+    let cardFilmes;
+
     listaFilmes.innerHTML = "";
-    //percorre cada item do array ; 
     itens.forEach(function(movie){    
-        //cria item na lista
-        liCard = document.createElement("div");    
-        liCard.insertAdjacentHTML("beforeend",
+        cardFilmes = document.createElement("div");    
+        cardFilmes.insertAdjacentHTML("beforeend",
         `
             <section class="div-borda" id=${movie.id}>  
             <figure>
@@ -79,8 +71,8 @@ function exibeFilmes ( valorEscolhido, ordemEscolhida){
          </div>
       </section>
          `)
-    liCard.setAttribute("class", "lista-filme")
-    listaFilmes.appendChild(liCard);
+    cardFilmes.setAttribute("class", "lista-filme")
+    listaFilmes.appendChild(cardFilmes);
   });
 }
 
@@ -95,53 +87,11 @@ function ordenaItem(itens, ordemEscolhida){
         itens =  ordenaDados(itens, "release_date", "asc")
     }
     return itens
-
-
 }
 
-
-
-function exibeContas(items){
-    let resultado = document.getElementById("resultadoCalculo");
-    let mediaNotasAvaliacao = calculo(items,"media", "rt_score" );
-
-    let personagens = []
-
-    items.map(function(film) {
-        film.people.map(function (person){
-            personagens.push(
-                {
-                    ...person,
-                    'title' : film.title
-                }
-            )
-        })
-    })
-
-    let idadeMaior = calculo(personagens, "maior", "age");
-    let idadeMenor = calculo(personagens, "menor", "age");
-    let mediaPersonagens = calculo(personagens, "media", "age");
-
-    // let genero = []
-
-    // personagens.map(function(personagem){
-    //     genero.push({
-            
-    //         "gender" : personagem.gender
-        
-    //     })
-    // })
-
-    // console.log(genero)
-    // let mediaGenero = calculo(genero,"media", "Female" );
-    
-    resultado.innerHTML= `<h3 style=" color:#b3c235;">Curiosidades: </h3>
-    <div class="info">
-    <p class = "texto"> A média da avaliação dos filmes é ${mediaNotasAvaliacao} .</p>
-    <p class = "texto"> A média de idade dos personagens é de ${mediaPersonagens} anos.</p>
-    <p class = "texto"> O personagem mais novo é ${idadeMenor.name} com ${idadeMenor.age} anos do filme ${idadeMenor.title}: </p><img src="${idadeMenor.img}" style=" width:5%; height: 10% ">
-    <p class = "texto"> E o personagem mais velho é ${idadeMaior.name} com ${idadeMaior.age} anos do filme ${idadeMaior.title}:</p><img src="${idadeMaior.img}" style=" width:5%; height: 10%">
-    </div>` 
-    return resultado
-    
+const btnResete = document.getElementById("btnResete");
+function limparFiltro() {
+    window.location.reload(); 
 }
+btnResete.addEventListener("click", limparFiltro)
+

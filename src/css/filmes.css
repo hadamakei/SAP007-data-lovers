@@ -1,30 +1,13 @@
 @import url(padrao.css);
 
- body{
-  width: 100%;
-} 
-
-
-
-.descrição-pagina{ 
+/* .descrição-pagina{ 
   font-size: 1.2rem;
   color: #666;
   text-align: justify;
   padding-top: 0.2rem;
   margin-left: 15%;
   margin-right: 15%;
-}
-.resultadoCalculo{
-  font-size: 1.1rem;
-  color: #666;
-  padding: 2em;
-  margin-left: 10em;
-  margin-right: 10em;
-  margin-bottom: 2%;
-  box-shadow: 0px 0px 4px 1px rgba(122, 129, 228, 0.7); 
-  box-sizing: border-box;  
-  border-radius: 10px;  
-}
+} */
 
 .div-galeria-filmes{
   margin: 4% auto;
@@ -35,33 +18,33 @@
 }
 
 .div-borda{
-  display:flex;
-  width:100%;
+  display: flex;
+  width: 100%;
   background-color: white;
   box-shadow: 0px 0px 14px 4px #251E40; 
-  padding:2rem;    
+  padding: 2rem;    
   box-sizing: border-box;   
-  margin-bottom:3rem;    
+  margin-bottom: 3rem;    
   border-radius: 10px;  
 }
 
 .img-do-filme{
-  width:15rem;
-  border-radius:3%;
+  width: 15rem;
+  border-radius: 3%;
 }
 
 .div-informacoes-gerais{
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   padding-left: 2rem;
-  width:75%;
+  width: 75%;
   color: #666;
   font-size: 1.1rem;
 }
 
 .div-titulo-e-avaliacao{
-  width:100%;
-  display:flex;
+  width: 100%;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -73,25 +56,25 @@
 }
 
 .div-avaliacao{
-  display:flex;
+  display: flex;
 }
 
 .img-da-avaliacao{
-  align-self:right;
+  align-self: right;
   height: 3rem; 
   width: 3rem;
 }
 
 .nota-da-avaliacao{
   font-size: 2rem;
-  color:#B3C235;
+  color: #B3C235;
   font-weight: bold;
-  margin-left:1rem;
+  margin-left: 1rem;
 }
 
 .titulo-tag-h3{
-  font-size:1.4rem;
-  color:#B3C235;
+  font-size: 1.4rem;
+  color: #B3C235;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }

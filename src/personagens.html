@@ -20,30 +20,33 @@
 
   <main>
     <h1 class="titulo-pagina">Personagens</h1>
+    <section>
+      <form>
+        <div class="div-filtra-ordena">
+          <select class="label-filtra-ordena" id="selecioneGenero">
+            <option class="opcaoSelecionar" selected value="">Gênero</option>
+            <option value="Female">Feminino</option>
+            <option value="Male">Masculino</option>
+            <option value="NA">Indefinido</option>
+          </select>
 
-    <form>
-      <div class="div-filtra-ordena">
-        <select class="label-filtra-ordena" id="selecioneGenero">
-          <option class="opcaoSelecionar" selected value="">Gênero</option>
-          <option value="Female">Feminino</option>
-          <option value="Male">Masculino</option>
-          <option value="NA">Indefinido</option>
-        </select>
+          <select class="label-filtra-ordena" id="selecioneFilme">
+            <option class="opcaoSelecionar" selected value="">Filmes</option>
+          </select>
 
-        <select class="label-filtra-ordena" id="selecioneFilme">
-          <option class="opcaoSelecionar" selected value="">Filmes</option>
-        </select>
+          <select class="label-filtra-ordena" id="selecionaOrdem">
+            <option selected disabled>Ordenar</option>
+            <option value="ordemAlfabetica" id="">A &#8594 Z</option>
+            <option value="ordemReversaAlfabetica">Z &#8594 A </option>
+          </select>
 
-        <select class="label-filtra-ordena" id="selecionaOrdem">
-          <option selected disabled>Ordenar</option>
-          <option value="ordemAlfabetica" id="">A &#8594 Z</option>
-          <option value="ordemReversaAlfabetica">Z &#8594 A </option>
-        </select>
-      </div>
-    </form>
+          <button type="reset" id="btnResete" class="btn-resete">Limpar Filtro | Ordem</button>
 
-    <article id="cardPersonagens" class="div-galeria-personagens">
-    </article>
+        </div>
+      </form>
+    </section>
+
+    <article id="cardPersonagens" class="div-galeria-personagens"></article>
   </main>
 
   <footer class="rodape">

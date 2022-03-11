@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gráficos Studio Ghibli</title>
-  <link rel="stylesheet" href="./css/graficos.css" />
+  <title>Curiosidades Studio Ghibli</title>
+  <link rel="stylesheet" href="./css/curiosidades.css" />
 </head>
 
 <body>
@@ -14,26 +14,32 @@
     <div><img class="img-logo" src="./imagens/logo.png" alt="imagem studio ghibli"></div>
     <nav class="menu-nav">
       <ul>
-        <li><a href="personagens.html">Personagens</a></li>
         <li><a href="index.html">Filmes</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
       </ul>
     </nav>
   </header>
 
-  <h1 class="titulo-pagina">Curiosidades</h1>
-
-  <div>
-    <p class="texto-media-de-personagens" id="resultadoMediaDePersonagens"></p>
-  </div>
-
-  <section class="caixa-chart">
-    <div class="chart-avaliacao">
-      <canvas id="chartMediaDeAvaliacao" class="printa-avaliacao"></canvas>
+  <main>
+    <h1 class="titulo-pagina">Curiosidades</h1>
+    <div class="div-borda">
+      <p id="resultadoIdadePersonagens"></p>
+    </div>
+    
+    <div class="div-borda">
+      <div class="chart-personagens">
+        <canvas id="chartGeneroDePersonagens" class="printa-genero-de-personagens"></canvas>
+      </div>
+      <div class="texto-genero-de-personagens" id="resultadoGeneroDePersonagens"></div>
     </div>
 
-    <div class="texto-media-de-avaliacao" id="resultadoMediaDeAvaliacao"></div>
-
-  </section>
+    <div class="div-borda">
+      <div class="chart-avaliacao">
+        <canvas id="chartMediaDeAvaliacao" class="printa-avaliacao"></canvas>
+      </div>
+      <div class="texto-media-de-avaliacao" id="resultadoMediaDeAvaliacao"></div>
+    </div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -58,6 +64,7 @@
     </div>
   </footer>
 
+  
   <script src="curiosidades.js" type="module"></script>
 
 </body>
