@@ -44,29 +44,29 @@ function exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida) {
     //pega e salva o elemento com o id da lista na variavel cardPersonagens
     let cardPersonagens = document.getElementById("cardPersonagens");
     let listaPersonagens;
-    let Personagens = pegaPersonagemPorFilme(tituloEscolhido, generoEscolhido, ordemEscolhida);
+    let personagens = pegaPersonagemPorFilme(tituloEscolhido, generoEscolhido, ordemEscolhida);
     cardPersonagens.innerHTML = " ";
-    if (Personagens.length == 0) {
+    if (personagens.length == 0) {
         cardPersonagens.innerHTML = "Sem resultados. Tente outros filtros."
     } //percorre cada personagem do array 
-    Personagens.forEach(function (Personagens) {
+    personagens.forEach(function (Personagens) {
         listaPersonagens = document.createElement("div");
         listaPersonagens.insertAdjacentHTML("beforeend",
      `
         <div class="card">
          <div class="card-interno">
              <div class="card-frente">
-                 <img class="img-do-personagem" src=${Personagens.img} alt="imagem ref. ao personagem: ${Personagens.name} style= height = "240px", width= "100%">
+                 <img class="img-do-personagem" src=${personagens.img} alt="imagem ref. ao personagem: ${personagens.name} style= height = "240px", width= "100%">
                  <div class="card-titulo-frente">
-                     <p>${Personagens.name}</p>
+                     <p>${personagens.name}</p>
                  </div>
              </div>
              <div class= "card-verso">
-                 <p class="card-titulo-verso">${Personagens.name}</p>
-                 <p class="card-texto-verso">Idade: ${Personagens.age}</p>
-                 <p class="card-texto-verso">Gênero: ${Personagens.gender}</p>
-                 <p class="card-texto-verso">Espécie: ${Personagens.specie}</p>
-                 <p class="card-texto-verso">Filme: ${Personagens.title}</p>
+                 <p class="card-titulo-verso">${personagens.name}</p>
+                 <p class="card-texto-verso">Idade: ${personagens.age}</p>
+                 <p class="card-texto-verso">Gênero: ${personagens.gender}</p>
+                 <p class="card-texto-verso">Espécie: ${personagens.specie}</p>
+                 <p class="card-texto-verso">Filme: ${personagens.title}</p>
              </div>
             </div>
         </div>
@@ -83,7 +83,7 @@ function ordenaPersonagem(characters, ordemEscolhida) {
     if (ordemEscolhida == "ordemReversaAlfabetica") {
         characters = ordenaDados(characters, "name", "desc");
     }
-    return characters
+    return personagens
 }
 
 const btnResete = document.getElementById("btnResete");

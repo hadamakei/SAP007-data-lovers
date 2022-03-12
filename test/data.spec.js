@@ -130,13 +130,5 @@ describe('calculoAgregado', () => {
 
 });
 
-describe('calculoAgregado', () => {
-    it('é função', () => {
-        expect(typeof calculoAgregado).toBe('function');
-    })
-    it('returna resultado de calculo da média de avaliação dos filmes', () => {
-        let notas = [95, 93]
-        expect(calculoAgregado(notas)).toEqual(94);
-    })
-});
+
 

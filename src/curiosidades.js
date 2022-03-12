@@ -150,8 +150,8 @@ new Chart(chartGeneroDePersonagens, {
 //     //})
  
 
-}
+// }
 
-console.log(exibeGeneros())
+// console.log(exibeGeneros())
 
 
