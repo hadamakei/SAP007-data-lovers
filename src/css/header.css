@@ -1,42 +1,26 @@
-body{
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0;
-
-  
-}
-
-.img-logo{
-  width: 60%;
-  margin-left: 30%;
-}
-
 .caixa-cabecalho{
-  height: 40vh;
+  height: 42vh;
   width: 100%;
   padding-top:1rem;
-  /* background-image: url(../imagens/cabeçalho.png);
-  background-size: cover;
-  background-position-x:100% ;
-  background-repeat: no-repeat; */
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
   background-color: #092640;
   font-size: 100%;
+  margin: 0;
 }
 
-.menu-nav {
+.menu-nav{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-around;
+  justify-content: space-around;
   margin: 0 auto;
 
 }
 
-.menu-nav ul li {
+.menu-nav ul li{
   display: inline;
   padding: 4.0rem;
 }
@@ -45,7 +29,6 @@ body{
   text-decoration: none; 
   font-size: 1.8rem;
   color: #B3C235;
-  
 }
 
 .menu-nav a:hover{

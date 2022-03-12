@@ -1,0 +1,56 @@
+@import url(header.css);
+@import url(footer.css);
+@import url(padrao.css);
+
+.div-borda{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin: 20px auto;
+  box-shadow: 0px 0px 14px 4px #251E40; 
+  padding: 2rem;    
+  box-sizing: border-box;   
+  margin-bottom: 3rem;    
+  border-radius: 10px; 
+
+}
+
+.texto-media-idade-personagens{
+  font-size: 1.4rem;
+  color:#b3c235;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.div-img{
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em;
+}
+
+.img-personagem{
+  border-radius: 3%; 
+  width: 120px;
+  height: 15%;
+}
+
+.chart-avaliacao{
+  width: 70%;
+  display: flex;
+}
+
+.texto-media-de-avaliacao{
+  left: 65%;
+  width: 20%;
+  margin: 5rem;
+  padding: .5rem;
+  font-size: 1.6rem;
+  color:#b3c235;
+  align-items: center;
+}
+
+.resultado-media{
+  color: #70458C;
+}

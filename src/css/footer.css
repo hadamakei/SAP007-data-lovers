@@ -1,12 +1,12 @@
 .caixa-rodape{
-  background-color:#092640;
+  background-color: #092640;
   width: 100%;
+  margin-top: 16%;
 }
 
 .rodape{
-  margin-top: 20%;
   text-align: center;
-  color:#B3C235;
+  color: #B3C235;
   padding: 15px 0;
   bottom: 0;
   width: 100%;
@@ -20,7 +20,7 @@
 
   
 .rodape-lista-contatos a, .link-lab a{
-  color:#B3C235;
+  color: #B3C235;
 }
 
 .rodape-lista-contatos a:hover, .link-lab a:hover{

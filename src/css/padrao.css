@@ -8,32 +8,104 @@
   box-sizing: border-box;
 }
 
+body{
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header{
+  height: 80vh;
+  width: 100%;
+  padding-top: 1rem;
+  background-image: url('./imagens/imagem.png');
+  background-size: cover;
+  background-position-y: 100% ;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
 .titulo-pagina{
-    color:#b3c235;
-    font-weight: bold;
-    font-size: 40px; 
-    text-align: center;
-    font-size: 2.7rem;
-    padding-top: 2%;
-   }
+  color: #b3c235;
+  font-weight: bold;
+  font-size: 40px; 
+  left: 65%;
+  margin: 2rem;
+  margin-left: 4rem;
+}
 
 .div-filtra-ordena{
-    display:flex;
-    align-items:center;
-    width:20%;
-    margin-left: 45%;
-    margin-bottom:20px;
-    margin-top: 40px;
-  }
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  position: sticky;
+  top: 0;
+  margin: 15px;
+  margin-bottom: 0;
+  overflow: hidden;
+  z-index: 1;
+}
   
- .label-filtra-ordena{
+.label-filtra-ordena{
   font-size: 1.5rem;
+  justify-content: center;
   text-align: center;
-  color:#70458C;
+  color: #70458C;
   margin-right: 5%;
   padding: 2px 2px;
-  border-radius: 5px;
-  border-color:#b3c235 ;
-  }
+  border-radius: 3px;
+  border-color: #b3c235 ;
+  cursor: pointer;
+  height: 6vh;
+}
+
+
+
+.label-filtra-ordena:hover{
+    background-color: #e8f381 ;
+}
+
+.btn-resete{
+  font-size: 1.5rem;
+  color: #70458C;
+  margin-right: 4%;
+  padding: 2px 2px;
+  border-radius: 7px;
+  border-color: #b3c235 ;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  height: 6vh;
+  width: 18%;
+}
+
+.btn-resete:hover{
+  background-color:#e8f381 ;
+}
+
+::-webkit-scrollbar-track{
+  background-color:#f5ecec;
+}
+  
+::-webkit-scrollbar{
+    width: 14px;
+}
+  
+::-webkit-scrollbar-thumb{
+  background-color: #092640;
+  height: 110px; 
+}
+
+
+@media screen and (max-width: 800px){
+
+}
+
+@media screen and (max-width: 600px){
 
   
+}
