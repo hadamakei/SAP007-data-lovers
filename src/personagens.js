@@ -49,7 +49,7 @@ function exibePersonagens(tituloEscolhido, generoEscolhido, ordemEscolhida) {
     if (personagens.length == 0) {
         cardPersonagens.innerHTML = "Sem resultados. Tente outros filtros."
     } //percorre cada personagem do array 
-    personagens.forEach(function (Personagens) {
+    personagens.forEach(function (personagens) {
         listaPersonagens = document.createElement("div");
         listaPersonagens.insertAdjacentHTML("beforeend",
      `
@@ -83,7 +83,7 @@ function ordenaPersonagem(characters, ordemEscolhida) {
     if (ordemEscolhida == "ordemReversaAlfabetica") {
         characters = ordenaDados(characters, "name", "desc");
     }
-    return personagens
+    return characters
 }
 
 const btnResete = document.getElementById("btnResete");
