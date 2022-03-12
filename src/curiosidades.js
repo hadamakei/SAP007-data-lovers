@@ -122,8 +122,36 @@ new Chart(chartGeneroDePersonagens, {
 
 
 
+// const personagens = dados.map(film => film.people)
 
+// function exibeGeneros() {
+//     //const resultado = document.getElementById("resultadoIdadePersonagens");
+//     //const genero = []
+//     let personagem = []
+//     let generos = []
+//     // personagens.map(function (personagem) {
+//        personagens.map(function (person) {
+//          personagem.push(
+//           {
+//             ...person,
+//             'gender': person.gender
+            
+//           }
+//         )
+//       })
 
+//       personagem.map(function (genero){
+//           generos.push(
+//                 genero.gender
+//           )
+//       })
+//       return personagem
 
+//     //})
+ 
+
+}
+
+console.log(exibeGeneros())
 
 

@@ -91,4 +91,3 @@ function limparFiltro() {
     window.location.reload(); 
 }
 btnResete.addEventListener("click", limparFiltro)
-
