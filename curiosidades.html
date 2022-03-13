@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curiosidades Studio Ghibli</title>
+  <link rel="stylesheet" href="./css/curiosidades.css" />
+</head>
+
+<body>
+  <header class="caixa-cabecalho">
+    <div><img class="img-logo" src="./imagens/logo.png" alt="imagem studio ghibli"></div>
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="index.html">Filmes</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="titulo-pagina">Curiosidades</h1>
+    <div class="div-borda">
+      <p id="resultadoIdadePersonagens"></p>
+    </div>
+    
+    <div class="div-borda">
+      <div class="chart-personagens">
+        <canvas id="chartGeneroDePersonagens" class="printa-genero-de-personagens"></canvas>
+      </div>
+      <div class="texto-genero-de-personagens" id="resultadoGeneroDePersonagens"></div>
+    </div>
+
+    <div class="div-borda">
+      <div class="chart-avaliacao">
+        <canvas id="chartMediaDeAvaliacao" class="printa-avaliacao"></canvas>
+      </div>
+      <div class="texto-media-de-avaliacao" id="resultadoMediaDeAvaliacao"></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <footer class="rodape">
+    <div class="caixa-rodape">
+      <p class="subtitulo">Desenvolvido Por:</p>
+      <div class="rodape-lista-contatos">
+        <p class="rodape-lista-contatos-link">Keila Hadama</p>
+        <a class="rodape-lista-contatos-link" href="https://www.linkedin.com/in/keila-hadama-45a903193/">Linkedin</a>
+        <a class="rodape-lista-contatos-link" href="https://github.com/hadamakei">Github</a>
+        <p class="rodape-lista-contatos-link">Taize Santos</p>
+        <a class="rodape-lista-contatos-link" href="https://www.linkedin.com/in/taizeborges/">Linkedin</a>
+        <a class="rodape-lista-contatos-link" href="https://github.com/taizesantos">Github</a>
+      </div>
+      <div class="link-lab">
+        <a href="https://talento.laboratoria.la/" target="_blank">Bootcamp Laboratória</a>
+        <p class="subtitulo">SAP007 | 2022</p>
+      </div>
+      <figure class="div-img-rodape">
+        <img class="img-rodape" src="./imagens/totoros.png" alt="imagem-totoros">
+      </figure>
+    </div>
+  </footer>
+
+  
+  <script src="curiosidades.js" type="module"></script>
+
+</body>
+
+</html>

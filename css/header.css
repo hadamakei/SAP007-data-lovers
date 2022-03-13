@@ -1,0 +1,38 @@
+.caixa-cabecalho{
+  height: 42vh;
+  width: 100%;
+  padding-top:1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: #092640;
+  font-size: 100%;
+  margin: 0;
+}
+
+.menu-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+
+}
+
+.menu-nav ul li{
+  display: inline;
+  padding: 4.0rem;
+}
+
+.menu-nav a{
+  text-decoration: none; 
+  font-size: 1.8rem;
+  color: #B3C235;
+}
+
+.menu-nav a:hover{
+  text-decoration: underline;
+  color: white;
+}
+

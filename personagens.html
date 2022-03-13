@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Personagens Studio Ghibli</title>
+  <link rel="stylesheet" href="./css/personagens.css" />
+</head>
+
+<body>
+  <header class="caixa-cabecalho">
+    <div><img class="img-logo" src="./imagens/logo.png" alt="imagem studio ghibli"></div>
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="index.html">Filmes</a></li>
+        <li><a href="curiosidades.html">Curiosidades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="titulo-pagina">Personagens</h1>
+    <section>
+      <form>
+        <div class="div-filtra-ordena">
+          <select class="label-filtra-ordena" id="selecioneGenero">
+            <option class="opcaoSelecionar" selected value="">Gênero</option>
+            <option value="Female">Feminino</option>
+            <option value="Male">Masculino</option>
+            <option value="NA">Indefinido</option>
+          </select>
+
+          <select class="label-filtra-ordena" id="selecioneFilme">
+            <option class="opcaoSelecionar" selected value="">Filmes</option>
+          </select>
+
+          <select class="label-filtra-ordena" id="selecionaOrdem">
+            <option selected disabled>Ordenar</option>
+            <option value="ordemAlfabetica" id="">A &#8594 Z</option>
+            <option value="ordemReversaAlfabetica">Z &#8594 A </option>
+          </select>
+
+          <button type="reset" id="btnResete" class="btn-resete">Limpar Filtro | Ordem</button>
+
+        </div>
+      </form>
+    </section>
+
+    <article id="cardPersonagens" class="div-galeria-personagens"></article>
+  </main>
+
+  <footer class="rodape">
+    <div class="caixa-rodape">
+      <p class="subtitulo">Desenvolvido Por:</p>
+      <div class="rodape-lista-contatos">
+        <p class="rodape-lista-contatos-link">Keila Hadama</p>
+        <a class="rodape-lista-contatos-link" href="https://www.linkedin.com/in/keila-hadama-45a903193/">Linkedin</a>
+        <a class="rodape-lista-contatos-link" href="https://github.com/hadamakei">Github</a>
+        <p class="rodape-lista-contatos-link">Taize Santos</p>
+        <a class="rodape-lista-contatos-link" href="https://www.linkedin.com/in/taizeborges/">Linkedin</a>
+        <a class="rodape-lista-contatos-link" href="https://github.com/taizesantos">Github</a>
+      </div>
+      <div class="link-lab">
+        <a href="https://talento.laboratoria.la/" target="_blank">Bootcamp Laboratória</a>
+        <p class="subtitulo">SAP007 | 2022</p>
+      </div>
+      <figure class="div-img-rodape">
+        <img class="img-rodape" src="./imagens/totoros.png" alt="imagem-totoros">
+      </figure>
+    </div>
+  </footer>
+
+  <script src="personagens.js" type="module"></script>
+</body>
+
+</html>
