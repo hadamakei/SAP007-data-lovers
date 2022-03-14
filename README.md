@@ -77,11 +77,11 @@ para nosso usuário poder conhecê-los e saber quantas e quais são as criaçõe
 
 ## 5. Protótipo de alta fidelidade
 
-- <img src="src/imagens/prototipo.png" style= "width:250px; height:250px">
+- <img src="src/imagens/prototipo.png" style= "width:250px; height:250px" />
 
 ## 6. Palheta de Cores
 
-- <img src="src/imagens/color_theme_totoro.jpeg" style= "width:250px; height:250px">
+- <img src="src/imagens/color_theme_totoro.jpeg" style= "width:250px; height:250px" />
 
 ## 7. Ferramentas e metodologia aplicada
 
@@ -118,7 +118,7 @@ Realização das cerimonias de metodologia ágil: Daily, Sprint Planning, Sprint
 
 - [x] [Teste unitário.](https://jestjs.io/docs/pt-BR/getting-started)
 
-<img src="src/imagens/print Testes.png">
+<img src="src/imagens/print Testes.png" />
 
 ### Estrutura do código e guia de estilo
 
