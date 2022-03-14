@@ -95,6 +95,7 @@ para nosso usuário poder conhecê-los e saber quantas e quais são as criaçõe
 
 Utilização do Trello para organização durante as Sprints do projeto, realizando a divisão de baby steps para as tarefas desenvolvidas, geradas a partir do Backlog.
 Realização das cerimonias de metodologia ágil: Daily, Sprint Planning, Sprint Review, Sprint Retrospective, e Sprint Checkout.
+<br>
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white">
 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
@@ -174,14 +175,14 @@ O _boilerplate_ contém a seguinte estrutura de arquivos:
 
 [Keila Hadama]
 
-<a href="https://www.linkedin.com/in/keila-hadama-45a903193/" target="_blank">Linkedin</a>
 <a href="https://github.com/hadamakei" target="_blank">Github</a>
 <a href="https://www.linkedin.com/in/keila-hadama-45a903193/" target="_bank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 
 [Taize Santos]
 
-<a href="https://www.linkedin.com/in/taizeborges/" target="_blank">Linkedin</a>
 <a href="https://github.com/taizesantos" target="_blank">Github</a>
+<a href="https://www.linkedin.com/in/taizeborges/" target="_bank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+
 
 
 ## 11. Como usar
