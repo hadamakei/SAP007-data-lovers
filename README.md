@@ -1,6 +1,6 @@
 # Data Lovers
 
-## Link do gt-pages a incluir: [Studio Ghibli]()
+## Visite nossa página aqui: https://hadamakei.github.io/SAP007-data-lovers/index.html
 
 ## Índice
 
@@ -58,6 +58,7 @@ A interface proposta no site é dividido em 3 páginas:
 - **Página de curiosidades** - Mostra um dashboard com a média de idades dos personagens e um gráfico com notas por filme e sua média de avaliação.
 <img src= "src/imagens/printCalculo.png" style= "width:250px; height:250px"/>
 <img src= "src/imagens/printGrafico.png" style= "width:250px; height:250px"/>
+
 
 
 ## 3. Histórias de Usuários
