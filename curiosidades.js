@@ -88,35 +88,35 @@ exibeMediaDeAvaliacao(dados)
 
 // const generoPersonagens = dados.map(film => film.people)
 // console.log(generoPersonagens)
-const masculino = dados
-const feminino = dados
-const indefinido = dados
+// const masculino = dados
+// const feminino = dados
+// const indefinido = dados
 
 // Printa o grafico da qnt de personagens por genero
 // eslint-disable-next-line no-undef
-new Chart(chartGeneroDePersonagens, {
+// new Chart(chartGeneroDePersonagens, {
 
-  type: 'pie',
-  data: {
-    labels: ['Masculino', 'Feminino', 'Indefinido'],
-    datasets: [{
-      label: 'Status', //TITULO GRAFICO
-      data: [masculino.length, feminino.length, indefinido.length],
-      backgroundColor: [
-        'rgb(100, 145, 60, 0.5)',
-        'rgb(139, 18, 123)',
-        'rgb(52, 45, 161)',
-      ],
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "GÊNERO"
-    }
-  }
+//   type: 'pie',
+//   data: {
+//     labels: ['Masculino', 'Feminino', 'Indefinido'],
+//     datasets: [{
+//       label: 'Status', //TITULO GRAFICO
+//       data: [masculino.length, feminino.length, indefinido.length],
+//       backgroundColor: [
+//         'rgb(100, 145, 60, 0.5)',
+//         'rgb(139, 18, 123)',
+//         'rgb(52, 45, 161)',
+//       ],
+//     }]
+//   },
+//   options: {
+//     title: {
+//       display: true,
+//       text: "GÊNERO"
+//     }
+//   }
 
-});
+// });
 
 
 
