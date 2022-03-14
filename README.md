@@ -1,6 +1,6 @@
 # Data Lovers
 
-## Link do gt-pages a incluir: [Studio Ghibli]()
+## https://hadamakei.github.io/SAP007-data-lovers/curiosidades.html
 
 ## Índice
 
