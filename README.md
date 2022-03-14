@@ -77,11 +77,11 @@ para nosso usuário poder conhecê-los e saber quantas e quais são as criaçõe
 
 ## 5. Protótipo de alta fidelidade
 
-- <img src="src/imagens/prototipo.png" style= "width:150px; height:150px">
+- <img src="src/imagens/prototipo.png" style= "width:250px; height:250px">
 
 ## 6. Palheta de Cores
 
-- <img src="src/imagens/color_theme_totoro.jpeg" style= "width:150px; height:150px">
+- <img src="src/imagens/color_theme_totoro.jpeg" style= "width:250px; height:250px">
 
 ## 7. Ferramentas e metodologia aplicada
 
