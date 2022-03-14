@@ -65,11 +65,11 @@ para nosso usuário poder conhecê-los e saber quantas e quais são as criaçõe
 - Cada animação tem seus personagens e para nossos usuários é importante saber quantos e quais são
 - Os personagens têm características únicas que o usuário deseja conhecer, como nome, idade, sexo, espécie, etc.
 
-![História1] (pentende de inclusao)
+![História1] O usuário pode filtrar os filmes por nome de diretor ou nome de produtor. Pode também escolher a ordem de exibição dos filmes por ordem alfabética, data de lançamento mais antigo ou mais recente.
 
-![História2](pentende de inclusao)
+![História2] O usuário pode filtrar os personagens por gênero(feminino, masculino, indefinido) ou por filme em que aparece. O usuário também escolhe a ordem que os personagens aparecem na tela por ordem alfabética crescente ou decrescente.
 
-![História3](pentende de inclusao)
+![História3] O usuário pode visualisar as curiosidades sobre os filmes e personagens. A média de idade dos personagens, o personagem mais velho e o mais novo. Além de poder visualizar em gráfico a média das notas de avaliação dos filmes.
 
 ## 4. Protótipo de baixa fidelidade
 
@@ -77,11 +77,11 @@ para nosso usuário poder conhecê-los e saber quantas e quais são as criaçõe
 
 ## 5. Protótipo de alta fidelidade
 
-- Pentende de inclusão
+- <img src="src/imagens/prototipo.png" style= "width: 50px height: 50px">
 
 ## 6. Palheta de Cores
 
-- Pentende de inclusão
+- <img src="src/imagens/color_theme_totoro.jpeg" style= "width: 50px height: 50px">
 
 ## 7. Ferramentas e metodologia aplicada
 
@@ -117,6 +117,8 @@ Realização das cerimonias de metodologia ágil: Daily, Sprint Planning, Sprint
 ### Testing
 
 - [x] [Teste unitário.](https://jestjs.io/docs/pt-BR/getting-started)
+
+<img src="src/imagens/print Testes.png">
 
 ### Estrutura do código e guia de estilo
 
