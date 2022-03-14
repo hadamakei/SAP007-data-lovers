@@ -1,6 +1,6 @@
 # Data Lovers
 
-## https://hadamakei.github.io/SAP007-data-lovers/index.html
+## Visite nossa página aqui: https://hadamakei.github.io/SAP007-data-lovers/index.html
 
 ## Índice
 
@@ -52,6 +52,7 @@ A interface proposta no site é dividido em 3 páginas:
 - **Página de filmes** - Possibilita a visualização de todos os filmes do estúdio com detalhes sobre cada um. Os filmes podem ser filtrados por diretor e produtor e ordenados por ordem alfabética e data de lançamento.
 - **Página de Personagens** - Possibilita a visualização de cards com as informações de todos os personagens que podem ser filtrados por gênero, por filme e ordenados por ordem alfabética.
 - **Página de curiosidades** - Mostra um dashboard com a média de idades dos personagens, um gráfico para visualização da quantidade de usuários e seus gêneros e um gráfico com notas por filme e sua média de avaliação.
+
 
 ## 3. Histórias de Usuários
 
