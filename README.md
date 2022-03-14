@@ -1,6 +1,6 @@
 # Data Lovers
 
-## https://hadamakei.github.io/SAP007-data-lovers/curiosidades.html
+## https://hadamakei.github.io/SAP007-data-lovers/index.html
 
 ## Índice
 
