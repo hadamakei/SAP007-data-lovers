@@ -9,7 +9,7 @@
 - [3. Histórias de Usuários](#3-Histórias-de-Usuários)
 - [4. Protótipo de baixa fidelidade](#4-Protótipo-de-baixa-fidelidade)
 - [5. Protótipo de alta fidelidade](#5-Protótipo-de-alta-fidelidade)
-- [6. Palheta de Cores](#6-Palheta-de-Cores)
+- [6. Paleta de Cores](#6-Paleta-de-Cores)
 - [7. Ferramentas e metodologia aplicada](#7-Ferramentas-e-metodologia-aplicada)
 - [8. Aprendizado adquirido](#8-Aprendizado-adquirido)
 - [9. Considerações técnicas](#9-Considerações-técnicas)
@@ -50,8 +50,15 @@ como amizade, amor e família. Até temáticas que não aparecem com frequência
 A interface proposta no site é dividido em 3 páginas:
  
 - **Página de filmes** - Possibilita a visualização de todos os filmes do estúdio com detalhes sobre cada um. Os filmes podem ser filtrados por diretor e produtor e ordenados por ordem alfabética e data de lançamento.
+<img src= "src/imagens/printFilmes.png" style= "width:250px; height:250px"/>
+
 - **Página de Personagens** - Possibilita a visualização de cards com as informações de todos os personagens que podem ser filtrados por gênero, por filme e ordenados por ordem alfabética.
-- **Página de curiosidades** - Mostra um dashboard com a média de idades dos personagens, um gráfico para visualização da quantidade de usuários e seus gêneros e um gráfico com notas por filme e sua média de avaliação.
+<img src= "src/imagens/pritntPersonagens.png" style= "width:250px; height:250px"/>
+
+- **Página de curiosidades** - Mostra um dashboard com a média de idades dos personagens e um gráfico com notas por filme e sua média de avaliação.
+<img src= "src/imagens/printCalculo.png" style= "width:250px; height:250px"/>
+<img src= "src/imagens/printGrafico.png" style= "width:250px; height:250px"/>
+
 
 ## 3. Histórias de Usuários
 
@@ -77,16 +84,19 @@ para nosso usuário poder conhecê-los e saber quantas e quais são as criaçõe
 
 ## 5. Protótipo de alta fidelidade
 
-- <img src="src/imagens/prototipo.png" style= "width:250px; height:250px" />
+<img src="src/imagens/prototipo.png" style= "width:250px; height:250px" />
 
-## 6. Palheta de Cores
+## 6. Paleta de Cores
 
-- <img src="src/imagens/color_theme_totoro.jpeg" style= "width:250px; height:250px" />
+<img src="src/imagens/color_theme_totoro.jpeg" style= "width:250px; height:250px" />
 
 ## 7. Ferramentas e metodologia aplicada
 
 Utilização do Trello para organização durante as Sprints do projeto, realizando a divisão de baby steps para as tarefas desenvolvidas, geradas a partir do Backlog.
 Realização das cerimonias de metodologia ágil: Daily, Sprint Planning, Sprint Review, Sprint Retrospective, e Sprint Checkout.
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
 
 ## 8. Aprendizado adquirido
 
@@ -165,6 +175,7 @@ O _boilerplate_ contém a seguinte estrutura de arquivos:
 
 <a href="https://www.linkedin.com/in/keila-hadama-45a903193/" target="_blank">Linkedin</a>
 <a href="https://github.com/hadamakei" target="_blank">Github</a>
+<a href="https://www.linkedin.com/in/keila-hadama-45a903193/" target="_bank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 
 [Taize Santos]
 
