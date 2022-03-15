@@ -50,14 +50,14 @@ como amizade, amor e família. Até temáticas que não aparecem com frequência
 A interface proposta no site é dividido em 3 páginas:
  
 - **Página de filmes** - Possibilita a visualização de todos os filmes do estúdio com detalhes sobre cada um. Os filmes podem ser filtrados por diretor e produtor e ordenados por ordem alfabética e data de lançamento.
-<img src= "src/imagens/printFilmes.png" style= "width:250px; height:250px"/>
+<img src= "src/imagens/printFilmes.png" style= "width:500px; height:250px"/>
 
 - **Página de Personagens** - Possibilita a visualização de cards com as informações de todos os personagens que podem ser filtrados por gênero, por filme e ordenados por ordem alfabética.
-<img src= "src/imagens/pritntPersonagens.png" style= "width:250px; height:250px"/>
+<img src= "src/imagens/pritntPersonagens.png" style= "width:500px; height:250px"/>
 
 - **Página de curiosidades** - Mostra um dashboard com a média de idades dos personagens e um gráfico com notas por filme e sua média de avaliação.
-<img src= "src/imagens/printCalculo.png" style= "width:250px; height:250px"/>
-<img src= "src/imagens/printGrafico.png" style= "width:250px; height:250px"/>
+<img src= "src/imagens/printCalculo.png" style= "width:500px; height:250px"/>
+<img src= "src/imagens/printGrafico.png" style= "width:500px; height:250px"/>
 
 
 
@@ -85,11 +85,11 @@ para nosso usuário poder conhecê-los e saber quantas e quais são as criaçõe
 
 ## 5. Protótipo de alta fidelidade
 
-<img src="src/imagens/prototipo.png" style= "width:250px; height:250px" />
+<img src="src/imagens/prototipo.png" style= "width:500px; height:250px" />
 
 ## 6. Paleta de Cores
 
-<img src="src/imagens/color_theme_totoro.jpeg" style= "width:250px; height:250px" />
+<img src="src/imagens/color_theme_totoro.jpeg" style= "width:500px; height:250px" />
 
 ## 7. Ferramentas e metodologia aplicada
 
@@ -175,12 +175,14 @@ O _boilerplate_ contém a seguinte estrutura de arquivos:
 
 [Keila Hadama]
 
-<a href="https://github.com/hadamakei" target="_blank">Github</a>
+<img  height="50" widtht="50" style="border-radius:5px;" src="https://avatars.githubusercontent.com/u/88164568?s=96&v=4">
+<a href="https://github.com/hadamakei" target="_blank"><img src="./imagens/github.png" width="25px">Github</a>
 <a href="https://www.linkedin.com/in/keila-hadama-45a903193/" target="_bank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 
 [Taize Santos]
 
-<a href="https://github.com/taizesantos" target="_blank">Github</a>
+<img  height="50" widtht="50" style="border-radius:5px;" src="https://avatars.githubusercontent.com/u/82822964?v=4">
+<a href="https://github.com/taizesantos" target="_blank"><img src="./imagens/github.png" width="25px">Github</a>
 <a href="https://www.linkedin.com/in/taizeborges/" target="_bank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 
 
