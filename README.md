@@ -176,13 +176,13 @@ O _boilerplate_ contém a seguinte estrutura de arquivos:
 [Keila Hadama]
 
 <img  height="50" widtht="50" style="border-radius:5px;" src="https://avatars.githubusercontent.com/u/88164568?s=96&v=4">
-<a href="https://github.com/hadamakei" target="_blank"><img src="./imagens/github.png" width="25px">Github</a>
+<a href="https://github.com/hadamakei" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
 <a href="https://www.linkedin.com/in/keila-hadama-45a903193/" target="_bank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 
 [Taize Santos]
 
 <img  height="50" widtht="50" style="border-radius:5px;" src="https://avatars.githubusercontent.com/u/82822964?v=4">
-<a href="https://github.com/taizesantos" target="_blank"><img src="./imagens/github.png" width="25px">Github</a>
+<a href="https://github.com/taizesantos" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
 <a href="https://www.linkedin.com/in/taizeborges/" target="_bank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 
 
